@@ -37,42 +37,42 @@ def conv2d(x,W):
     return tf.nn.conv2d(x,W,strides=[1,1,1,1], padding='SAME')
 
 #池化层
-def max_pool_2x2(x):
+def max_pool(x):
     #ksize [1,x,y,1]
-    return tf.nn.max_pool(x,ksize=[1,2,2,1], strides=[1,2,2,1], padding='SAME')
+    return tf.nn.max_pool(x,ksize=[1,2,4,1], strides=[1,2,4,1], padding='SAME')
 
 def cnn(x_train,x_test,y_train,y_test,n_batch):
     N = len(x_train)
     batch_size = N//n_batch
     #定义两个placeholder
-    x = tf.placeholder(tf.float32, [None, 460])#28*28
+    x = tf.placeholder(tf.float32, [None, 1840])#23*80
     y = tf.placeholder(tf.float32, [None, 2])
 
     #改变x的格式转为４Ｄ的向量【batch, in_height, in_width, in_channels]
-    x_image = tf.reshape(x,[-1, 23, 20 ,1])
+    x_image = tf.reshape(x,[-1, 23, 80 ,1])
 
     #初始化第一个卷积层的权值和偏量
-    W_conv1 = weight_variable([5,5,1,32])#5*5的采样窗口，３２个卷积核从１个平面抽取特征
+    W_conv1 = weight_variable([3,6,1,32])#5*5的采样窗口，３２个卷积核从１个平面抽取特征
     b_conv1 = bias_variable([32])#每一个卷积核一个偏置值
 
     #把x_image和权值向量进行卷积，再加上偏置值，然后应用于relu激活函数
     h_conv1 = tf.nn.relu(conv2d(x_image, W_conv1) + b_conv1)
-    h_pool1 = max_pool_2x2(h_conv1)#进行max-pooling
+    h_pool1 = max_pool(h_conv1)#进行max-pooling,12-by-20
 
     #初始化第二个卷积层的权值和偏置
-    W_conv2 = weight_variable([5,5,32,64]) #5*5的采样窗口，64个卷积核从32个平面抽取特征
+    W_conv2 = weight_variable([3,6,32,64]) #5*5的采样窗口，64个卷积核从32个平面抽取特征
     b_conv2 = bias_variable([64]) #每一个卷积核一个偏置值
 
     #把H_pool1和权值向量进行卷积，再加上偏置值，然后应用于relu激活函数
     h_conv2 = tf.nn.relu(conv2d(h_pool1, W_conv2) + b_conv2)
-    h_pool2 = max_pool_2x2(h_conv2)
+    h_pool2 = max_pool(h_conv2)#4-by-5
 
-    #23*20的图片第一次卷积后还是23*20,第一次池化后变为12*10
-    #第二次卷积后为12*10,第二次池化后变为6*5
+    #23*80的图片第一次卷积后还是23*80,第一次池化后变为12*20
+    #第二次卷积后为12*20,第二次池化后变为6*5
     #进过上面操作后得到64张6*5的平面
 
     #初始化第一全链接层的权值
-    W_fc1 = weight_variable([6*5*64,1024]) #上一层有7*7*64个神经元,全连接层有1024个神经元
+    W_fc1 = weight_variable([6*5*64,1024]) #上一层有6*5*64个神经元,全连接层有1024个神经元
     b_fc1 = bias_variable([1024])
 
     #把池化层2的输出扁平化为1维
@@ -117,7 +117,7 @@ def cnn(x_train,x_test,y_train,y_test,n_batch):
             print("Iter " + str(epoch) + "Testing Accuracy=" + str(acc))
             
 #load benchmark dataset
-data = sio.loadmat('PDNA-224-PSSM-11.mat')
+data = sio.loadmat('../data/PDNA-224-PSSM-bin-11.mat')
 X = data['data']
 Y = data['target']
 X = X.reshape(57348,-1)
