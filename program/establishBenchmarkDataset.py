@@ -13,13 +13,14 @@ import numpy as np
 #ncbi.getPSSMMatFileFromFastafile( 'PDNA-224-PSSM', 'PDNA-224.fasta', 'PDNA-224-PSSM.mat')
 
 # param ws: slip windown size
-def establishBenchmarkDataset(ws, savefile):
+# param pssm: 
+def establishBenchmarkDataset(ws, datafile, savefile):
     X = []
     Y = []
     k = 0
     t = 0
     # load PDNA-224-PSSM.mat
-    datafile = 'PDNA-224-PSSM.mat'
+    # datafile = 'PDNA-224-PSSM.mat'
     pssm = sio.loadmat(datafile)
 
     # read fasta file
@@ -68,4 +69,39 @@ def establishBenchmarkDataset(ws, savefile):
     dataset['target'] = Y
     sio.savemat(savefile,dataset)
 
-establishBenchmarkDataset(11,'PDNA-224-PSSM-11.mat')                
+
+def establishBinPSSM(datafile, savefile):
+    # load PDNA-224-PSSM.mat
+    # datafile = 'PDNA-224-PSSM.mat'
+    pssm = sio.loadmat(datafile)
+    excludes={'__header__', '__version__','__globals__'}
+    for key in excludes:
+        del(pssm[key])
+    
+    for sid in pssm:
+        if sid not in ['__header__', '__version__','__globals__']:
+            p = pssm[sid]
+            seqlen = len(p)    
+            bp = np.ndarray((seqlen,80),dtype=np.int8)
+               
+            for i in range(seqlen):
+                for j in range(20):
+                    x = p[i][j]
+                    if x < 0:
+                        x = x + 16
+                    b = list(bin(x)[2:])
+            
+                    if len(b) < 4:
+                        for k in range(4-len(b)):
+                            b.insert(k,'0')
+                    for k in range(len(b)):
+                        b[k] = int(b[k])
+ 
+                    bp[i][j*4:(j+1)*4]=b
+               
+            pssm[sid] =   bp           
+    #save benchmark data set
+    sio.savemat(savefile,pssm)
+
+establishBinPSSM('../data/PDNA-224-PSSM.mat','../data/PDNA-224-PSSM-bin.mat')    
+#establishBenchmarkDataset(11,'../data/PDNA-224-PSSM-bin.mat','../data/PDNA-224-PSSM-bin-11.mat')                
