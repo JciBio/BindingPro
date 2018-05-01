@@ -4,5 +4,9 @@
 *.ipynb
 .ipynb_checkpoints
 
+#PyCharm files
+.idea/*
+
+
 
 
