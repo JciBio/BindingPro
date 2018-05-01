@@ -81,8 +81,7 @@ def establishBenchmarkDatasetwithSlipWindons(ws, datafile, savefile):
     # datafile = 'PDNA-224-PSSM.mat'
     pssm = sio.loadmat(datafile)
     excludes={'__header__', '__version__','__globals__'}
-    for key in excludes:
-        del(pssm[key])
+
     # read fasta file
     #fastafile = 'PDNA-224.fasta'
     #seq_records = SeqIO.parse(fastafile)
@@ -140,26 +139,26 @@ def establishBinPSSM(datafile, savefile):
         if sid not in ['__header__', '__version__','__globals__']:
             p = pssm[sid]
             seqlen = len(p)    
-            bp = np.ndarray((seqlen,80),dtype=np.int8)
+            bp = np.ndarray((seqlen,160),dtype=np.int8)
                
             for i in range(seqlen):
                 for j in range(20):
                     x = p[i][j]
                     if x < 0:
-                        x = x + 16
+                        x = x + 256
                     b = list(bin(x)[2:])
             
-                    if len(b) < 4:
-                        for k in range(4-len(b)):
+                    if len(b) < 8:
+                        for k in range(8-len(b)):
                             b.insert(k,'0')
                     for k in range(len(b)):
                         b[k] = int(b[k])
  
-                    bp[i][j*4:(j+1)*4]=b
+                    bp[i][j*8:(j+1)*8]=b
                
             pssm[sid] =   bp           
     #save benchmark data set
     sio.savemat(savefile,pssm)
 
-#establishBinPSSM('../data/PDNA-224-PSSM.mat','../data/PDNA-224-PSSM-bin.mat')    
+establishBinPSSM('../data/PDNA-224-PSSM.mat','../data/PDNA-224-PSSM-bin.mat')
 establishBenchmarkDatasetwithSlipWindons(11,'../data/PDNA-224-PSSM-bin.mat','../data/PDNA-224-PSSM-bin-11.mat')                
