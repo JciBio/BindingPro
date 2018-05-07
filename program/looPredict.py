@@ -39,17 +39,17 @@ def conv2d(x,W):
 #池化层
 def max_pool(x):
     #ksize [1,x,y,1]
-    return tf.nn.max_pool(x,ksize=[1,3,4,1], strides=[1,2,4,1], padding='SAME')
+    return tf.nn.max_pool(x,ksize=[1,2,2,1], strides=[1,2,2,1], padding='SAME')
 
 def cnn(x_train,x_test,y_train,y_test,n_batch):
     N = len(x_train)
     batch_size = N//n_batch
     #定义两个placeholder
-    x = tf.placeholder(tf.float32, [None, 3680])#23*160
+    x = tf.placeholder(tf.float32, [None, 460])#23*20
     y = tf.placeholder(tf.float32, [None, 2])
 
     #改变x的格式转为４Ｄ的向量【batch, in_height, in_width, in_channels]
-    x_image = tf.reshape(x,[-1, 23, 160 ,1])
+    x_image = tf.reshape(x,[-1, 23, 20 ,1])
 
     #初始化第一个卷积层的权值和偏量
     W_conv1 = weight_variable([5,5,1,32])#5*5的采样窗口，３２个卷积核从１个平面抽取特征
@@ -67,16 +67,16 @@ def cnn(x_train,x_test,y_train,y_test,n_batch):
     h_conv2 = tf.nn.relu(conv2d(h_pool1, W_conv2) + b_conv2)
     h_pool2 = max_pool(h_conv2)#6-by-10
 
-    #23*160的图片第一次卷积后还是23*160,第一次池化后变为12*40
-    #第二次卷积后为12*40,第二次池化后变为6*10
-    #进过上面操作后得到64张6*10的平面
+    #23*160的图片第一次卷积后还是23*20,第一次池化后变为12*10
+    #第二次卷积后为12*10,第二次池化后变为6*5
+    #进过上面操作后得到64张6*5的平面
 
     #初始化第一全链接层的权值
-    W_fc1 = weight_variable([6*10*64,1024]) #上一层有6*10*64个神经元,全连接层有1024个神经元
+    W_fc1 = weight_variable([6*5*64,1024]) #上一层有6*10*64个神经元,全连接层有1024个神经元
     b_fc1 = bias_variable([1024])
 
     #把池化层2的输出扁平化为1维
-    h_pool2_flat = tf.reshape(h_pool2,[-1,6*10*64])
+    h_pool2_flat = tf.reshape(h_pool2,[-1,6*5*64])
     #求第一个全连接层的输出
     h_fc1 = tf.nn.relu(tf.matmul(h_pool2_flat, W_fc1) + b_fc1)
 
@@ -117,7 +117,7 @@ def cnn(x_train,x_test,y_train,y_test,n_batch):
             print("Iter " + str(epoch) + "Testing Accuracy=" + str(acc))
             
 #load benchmark dataset
-data = sio.loadmat('E:\\Repoes\\MatProgram\\BindingPro\\data\\PDNA-224-PSSM-bin-11.mat')
+data = sio.loadmat('../data/PDNA-224-PSSM-Norm-11.mat')
 X = data['data']
 Y = data['target']
 X = X.reshape(57348,-1)
