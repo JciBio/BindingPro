@@ -9,6 +9,7 @@ Created on Mon Apr  2 16:27:54 2018
 
 import scipy.io as sio
 import numpy as np
+import math
 # get pssm
 #ncbi.getPSSMMatFileFromFastafile( 'PDNA-224-PSSM', 'PDNA-224.fasta', 'PDNA-224-PSSM.mat')
 
@@ -99,7 +100,7 @@ def establishBenchmarkDatasetwithSlipWindons(ws, datafile, savefile):
                 col = np.size(p,1)
                 for j in range(seqlen):
                     #create a array
-                    d = np.ndarray(shape=(ws*2+1,col),dtype=np.int8)
+                    d = np.ndarray(shape=(ws*2+1,col))
                     
                     if j < ws:
                         d[0:ws-j] = p[j-ws:]
@@ -134,7 +135,7 @@ def establishBinPSSM(datafile, savefile):
     # load PDNA-224-PSSM.mat
     # datafile = 'PDNA-224-PSSM.mat'
     pssm = sio.loadmat(datafile)
-    
+
     for sid in pssm:
         if sid not in ['__header__', '__version__','__globals__']:
             p = pssm[sid]
@@ -159,6 +160,22 @@ def establishBinPSSM(datafile, savefile):
             pssm[sid] =   bp           
     #save benchmark data set
     sio.savemat(savefile,pssm)
-
-establishBinPSSM('../data/PDNA-224-PSSM.mat','../data/PDNA-224-PSSM-bin.mat')
-establishBenchmarkDatasetwithSlipWindons(11,'../data/PDNA-224-PSSM-bin.mat','../data/PDNA-224-PSSM-bin-11.mat')                
+def establishNormPSSM(datafile, savefile):
+    pssm = sio.loadmat(datafile)
+    npssm={}
+    for sid in pssm:
+        if sid not in ['__header__','__version__','__globals__']:
+            p = pssm[sid]
+            x = np.ndarray( (len(p),20), dtype=np.float)
+            for i in range(len(p)):
+                for j in range(20):
+                    x[i][j] = 1/(1+math.exp(p[i][j]))
+                    
+            npssm[sid] = x
+    
+    sio.savemat(savefile,npssm)
+    
+    
+#establishBinPSSM('../data/PDNA-224-PSSM.mat','../data/PDNA-224-PSSM-bin.mat')
+establishNormPSSM('../data/PDNA-224-PSSM.mat','../data/PDNA-224-PSSM-Norm.mat')
+establishBenchmarkDatasetwithSlipWindons(11,'../data/PDNA-224-PSSM-Norm.mat','../data/PDNA-224-PSSM-Norm-11.mat')                
