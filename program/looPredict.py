@@ -10,6 +10,7 @@ import scipy.io as sio
 #from sklearn.model_selection import LeaveOneOut
 from sklearn.model_selection import KFold
 import tensorflow as tf
+import numpy as np
 
 #def cnnByTensor(x_train, x_test, y_train, y_test,batch_size=100):
     #define two placeholder
@@ -92,13 +93,20 @@ def cnn(x_train,x_test,y_train,y_test,n_batch):
 
     #计算输出
     prediction = tf.nn.softmax(tf.matmul(h_fc1_drop,W_fc2) + b_fc2)
-
+    # 结果存放在一个布尔列表中
+    correct_prediction = tf.equal(tf.argmax(prediction, 1), tf.argmax(y, 1))
     #交叉熵代价函数
-    cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(labels=y,logits=prediction))
+    #cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(labels=y,logits=prediction))
+    #自定义损失函数，因为结合位点的标签是[0,1]共有3778，非结合位点的标签是[1,0]有53570，是非平衡数据集，
+    loss_less = 10
+    loss_more = 1
+    cross_entropy = tf.nn.softmax_cross_entropy_with_logits_v2(labels=y, logits=prediction)
+    y1 = [y[0] for y in y_train]
+    a = np.ones([len(y_train)],dtype=np.int32)
+    loss = tf.reduce_mean( tf.where( tf.greater_equal( y1,a), cross_entropy*loss_less, cross_entropy*loss_more))
     #使用AdamOptimizer进行优化
-    train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
-    #结果存放在一个布尔列表中
-    correct_prediction = tf.equal(tf.argmax(prediction,1),tf.argmax(y,1))
+    train_step = tf.train.AdamOptimizer(1e-4).minimize(loss)
+
     #求准确率
     accuracy = tf.reduce_mean(tf.cast(correct_prediction,tf.float32))
 
