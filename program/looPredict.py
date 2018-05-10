@@ -127,6 +127,6 @@ kf.get_n_splits(X)
 for train_index, test_index in kf.split(X):
     X_train, X_test = X[train_index], X[test_index]
     Y_train, Y_test = Y[train_index], Y[test_index]
-    #print("len(X_train)={},len(Y_test)={}".format(len(X_train),len(Y_test)))
+    print("len(X_train)={},len(Y_test)={}".format(len(X_train),len(Y_test)))
     cnn(X_train,X_test,Y_train,Y_test,100)
 
