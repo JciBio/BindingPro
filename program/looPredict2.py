@@ -7,17 +7,18 @@ Created on Wed Apr  4 11:40:07 2018
 """
 
 import scipy.io as sio
-#from sklearn.model_selection import LeaveOneOut
 from sklearn.model_selection import KFold
 import tensorflow as tf
 import numpy as np
 import random
+import matplotlib.pyplot as plt
 
 #数据集相关常数
-DATA_SIZE = 57348
+DATA_SIZE = 10000#57348
 INPUT_NODE = 460
 OUTPUT_NODE = 2
 X_SIZE = 23
+Y_SIZE = 20
 NUM_CHANNELS = 1
 NUM_LABELS = 2
 
@@ -29,15 +30,15 @@ CONV1_SIZE = 5
 CONV2_DEEP = 64
 CONV2_SIZE = 5
 
-FC_SIZE = 512 #全连接层的节点个数
+FC_SIZE = 1024 #全连接层的节点个数
 
-BATCH_SIZE = 100 #
+BATCH_SIZE = 50 #
 
 LEARNING_RATE = 1e-4 #基础学习率
 
 LEANING_RATE_DECAY = 0.99 #学习率的衰减率
 
-TRAINING_STEPS= 20 #训练轮数
+TRAINING_STEPS= 2000 #训练轮数
 
 #不同类的惩罚系数
 LOSS_COEF = [1, 10]
@@ -68,12 +69,13 @@ def max_pool(x):
     return tf.nn.max_pool(x,ksize=[1,2,2,1], strides=[1,2,2,1], padding='SAME')
 
 def cnn(x_train, x_test, y_train, y_test):
+    x_train_size = np.size(x_train, 0)
     #定义两个placeholder
     x = tf.placeholder(tf.float32, [None, INPUT_NODE])#23*20
     y = tf.placeholder(tf.float32, [None, OUTPUT_NODE])
 
     #改变x的格式转为４Ｄ的向量【batch, in_height, in_width, in_channels]
-    x_image = tf.reshape(x,[-1, X_SIZE, 20 ,1])
+    x_image = tf.reshape(x,[-1, X_SIZE, Y_SIZE, 1])
 
     #初始化第一个卷积层的权值和偏量
     W_conv1 = weight_variable([CONV1_SIZE,CONV1_SIZE,NUM_CHANNELS,CONV1_DEEP])#5*5的采样窗口，３２个卷积核从4个平面抽取特征
@@ -133,29 +135,59 @@ def cnn(x_train, x_test, y_train, y_test):
     with tf.Session() as sess:
         sess.run(tf.global_variables_initializer())
         for i in range(TRAINING_STEPS):
-            start = (i * BATCH_SIZE) % DATA_SIZE
-            end = min(start + BATCH_SIZE, DATA_SIZE)
+            start = (i * BATCH_SIZE) % x_train_size
+            end = min(start + BATCH_SIZE, x_train_size)
             batch_xs = x_train[start:end]
             batch_ys = y_train[start:end]
             sess.run(train_step,feed_dict={x:batch_xs, y: batch_ys, keep_prob: 0.5})
-            if i%5 == 0:
-                total_cross_entropy = sess.run(loss, feed_dict={x:x_train, y: y_train, keep_prob: 1.0})
-                print("After {} training step(s), cross entropy on all training data is {}".format(i, total_cross_entropy))
 
-        sess.run(prediction, feed_dict={x: x_test, y: y_test, keep_prob: 1.0})
-        return tf.cast(prediction, tf.float32)
-            
+        pred = sess.run(prediction, feed_dict={x: x_test, y: y_test, keep_prob: 1.0})
+        return pred
+
+
+# 绘制混淆矩阵的函数
+# 参数1  cm 混淆矩阵中显示的数值 二维数组
+# 参数2 cmap 混淆矩阵中的颜色
+# 参数3 title 标题
+def plot_confusion_matrix(cm, classes, title='混淆矩阵', cmap=plt.cm.Greens):
+    # imshow() 表示绘制并显示二维图 有18个参数
+    # 参数1 X 混淆矩阵中显示的数值 二维数组
+    # 参数2 cmap 颜色 plt.cm.Blues表示蓝色 plt.cm.Reds表示红色 plt.cm.Greens表示绿色
+    # 参数5 interpolation 插值法 一般有如下值
+    #     nearest 最近邻插值法
+    #     bilinear 双线性插值法
+    plt.rcParams['font.sans-serif'] = ['SimHei']
+    plt.rcParams['axes.unicode_minus'] = False
+    plt.imshow(cm, cmap=cmap, interpolation="nearest")
+    plt.title(title)  # 标题
+    plt.colorbar()  # 显示颜色的进度条
+    tick_marks = np.arange(2)  # [0 1]
+    plt.xticks(tick_marks, classes)  # 对x轴上分类进行标记
+    plt.yticks(tick_marks, classes)  # 对y轴上分类进行标记
+
+    thresh = np.mean(cm)
+    for i in range(2):
+        for j in range(2):
+            plt.text(i, j, cm[j][i],
+                     horizontalalignment='center',
+                     color='white' if cm[i][j] >= thresh else 'black')
+
+    plt.xlabel('预测值')
+    plt.ylabel('真实值')
+
+
 #load benchmark dataset
 data = sio.loadmat('../data/PDNA-224-PSSM-Norm-11.mat')
 
-#X = data['data']
-X = np.ndarray((57348,460))
-for i in range(57348):
-    for j in range(460):
-        X[i][j] = random.random()
+X = data['data']
 Y = data['target']
+
+rind = random.sample(range(57348),10000)
 pred_Y = np.ndarray([DATA_SIZE,OUTPUT_NODE])
+
 X = X.reshape(57348,-1)
+X = X[rind]
+Y = Y[rind]
 kf = KFold(n_splits=5)
 kf.get_n_splits(X)
 for train_index, test_index in kf.split(X):
@@ -164,3 +196,14 @@ for train_index, test_index in kf.split(X):
     #print("len(X_train)={},len(Y_test)={}".format(len(X_train),len(Y_test)))
     pred_Y[test_index] = cnn(X_train,X_test,Y_train,Y_test)
 
+correct = 0
+for i in range(DATA_SIZE):
+    if (Y[i] == pred_Y[i]).all():
+        correct += 1
+print("correct accuracy: {}".format(correct/DATA_SIZE))
+
+cnf_matrix = confusion_matrix(Y, pred_Y)
+print(cnf_matrix)
+recall = cnf_matrix[1][1] / (cnf_matrix[1][0] + cnf_matrix[1][1])
+print('recall: ', recall)
+plot_confusion_matrix(cnf_matrix, [0, 1], cmap=plt.cm.Reds)
