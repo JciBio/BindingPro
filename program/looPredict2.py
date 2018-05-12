@@ -11,8 +11,10 @@ import scipy.io as sio
 from sklearn.model_selection import KFold
 import tensorflow as tf
 import numpy as np
+import random
 
 #数据集相关常数
+DATA_SIZE = 57348
 INPUT_NODE = 460
 OUTPUT_NODE = 2
 X_SIZE = 23
@@ -35,7 +37,10 @@ LEARNING_RATE = 1e-4 #基础学习率
 
 LEANING_RATE_DECAY = 0.99 #学习率的衰减率
 
-TRAINING_STEPS= 3000 #训练轮数
+TRAINING_STEPS= 20 #训练轮数
+
+#不同类的惩罚系数
+LOSS_COEF = [1, 10]
 
 #初始化权值
 def weight_variable(shape):
@@ -62,14 +67,13 @@ def max_pool(x):
     #ksize [1,x,y,1]
     return tf.nn.max_pool(x,ksize=[1,2,2,1], strides=[1,2,2,1], padding='SAME')
 
-def cnn(x_train,x_test,y_train,y_test,n_batch):
-
+def cnn(x_train, x_test, y_train, y_test):
     #定义两个placeholder
     x = tf.placeholder(tf.float32, [None, INPUT_NODE])#23*20
     y = tf.placeholder(tf.float32, [None, OUTPUT_NODE])
 
     #改变x的格式转为４Ｄ的向量【batch, in_height, in_width, in_channels]
-    x_image = tf.reshape(x,[-1, X_SIZE, INPUT_NODE/X_SIZE ,1])
+    x_image = tf.reshape(x,[-1, X_SIZE, 20 ,1])
 
     #初始化第一个卷积层的权值和偏量
     W_conv1 = weight_variable([CONV1_SIZE,CONV1_SIZE,NUM_CHANNELS,CONV1_DEEP])#5*5的采样窗口，３２个卷积核从4个平面抽取特征
@@ -102,7 +106,7 @@ def cnn(x_train,x_test,y_train,y_test,n_batch):
 
     #keep_prob用了表示神经元的输出概率
     keep_prob = tf.placeholder(tf.float32)
-    h_fc1_drop = tf.nn.dropout(h_fc1,keep_prob)
+    h_fc1_drop = tf.nn.dropout(h_fc1, keep_prob)
 
     #初始化第二个全连接层
     W_fc2 = weight_variable([FC_SIZE,OUTPUT_NODE])
@@ -115,47 +119,48 @@ def cnn(x_train,x_test,y_train,y_test,n_batch):
     #交叉熵代价函数
     #cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(labels=y,logits=prediction))
     #自定义损失函数，因为结合位点的标签是[0,1]共有3778，非结合位点的标签是[1,0]有53570，是非平衡数据集，
-    loss_less = 10
-    loss_more = 1
     cross_entropy = tf.nn.softmax_cross_entropy_with_logits_v2(labels=y, logits=prediction)
     y1 = tf.argmax(y,1)
     yshape = tf.shape(y)
-    a = tf.ones([yshape(0)],dtype=tf.int64)
-    loss = tf.reduce_mean( tf.where( tf.greater_equal( y1,a), cross_entropy*loss_less, cross_entropy*loss_more))
+    a = tf.ones([yshape[0]],dtype=tf.int64)
+    loss = tf.reduce_mean( tf.where( tf.greater_equal( y1,a), cross_entropy * LOSS_COEF[1], cross_entropy * LOSS_COEF[0]))
     #使用AdamOptimizer进行优化
-    train_step = tf.train.AdamOptimizer(1e-4).minimize(loss)
+    train_step = tf.train.AdamOptimizer(LEARNING_RATE).minimize(loss)
 
     #求准确率
     accuracy = tf.reduce_mean(tf.cast(correct_prediction,tf.float32))
 
     with tf.Session() as sess:
         sess.run(tf.global_variables_initializer())
-        for epoch in range(10):
-            for batch in range(n_batch):
-                if (batch+1)*batch_size > N:
-                    batch_xs = x_train[batch*batch_size:]
-                    batch_ys = y_train[batch*batch_size:]
-                else:
-                    batch_xs = x_train[batch*batch_size:(batch+1)*batch_size]
-                    batch_ys = y_train[batch*batch_size:(batch+1)*batch_size]
-                #batch_xs,batch_ys = mnist.train.next_batch(batch_size)
-                sess.run(train_step,feed_dict={x:batch_xs,y:batch_ys,keep_prob:0.5})
-            
-            acc = sess.run(accuracy, feed_dict={x:x_test, y:y_test, keep_prob:1.0})
-            print("Iter " + str(epoch) + "Testing Accuracy=" + str(acc))
+        for i in range(TRAINING_STEPS):
+            start = (i * BATCH_SIZE) % DATA_SIZE
+            end = min(start + BATCH_SIZE, DATA_SIZE)
+            batch_xs = x_train[start:end]
+            batch_ys = y_train[start:end]
+            sess.run(train_step,feed_dict={x:batch_xs, y: batch_ys, keep_prob: 0.5})
+            if i%5 == 0:
+                total_cross_entropy = sess.run(loss, feed_dict={x:x_train, y: y_train, keep_prob: 1.0})
+                print("After {} training step(s), cross entropy on all training data is {}".format(i, total_cross_entropy))
+
+        sess.run(prediction, feed_dict={x: x_test, y: y_test, keep_prob: 1.0})
+        return tf.cast(prediction, tf.float32)
             
 #load benchmark dataset
 data = sio.loadmat('../data/PDNA-224-PSSM-Norm-11.mat')
 
-X = data['data']
+#X = data['data']
+X = np.ndarray((57348,460))
+for i in range(57348):
+    for j in range(460):
+        X[i][j] = random.random()
 Y = data['target']
+pred_Y = np.ndarray([DATA_SIZE,OUTPUT_NODE])
 X = X.reshape(57348,-1)
-#loo = LeaveOneOut()
 kf = KFold(n_splits=5)
 kf.get_n_splits(X)
 for train_index, test_index in kf.split(X):
     X_train, X_test = X[train_index], X[test_index]
     Y_train, Y_test = Y[train_index], Y[test_index]
-    print("len(X_train)={},len(Y_test)={}".format(len(X_train),len(Y_test)))
-    cnn(X_train,X_test,Y_train,Y_test,100)
+    #print("len(X_train)={},len(Y_test)={}".format(len(X_train),len(Y_test)))
+    pred_Y[test_index] = cnn(X_train,X_test,Y_train,Y_test)
 
