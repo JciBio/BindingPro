@@ -8,13 +8,14 @@ Created on Wed Apr  4 11:40:07 2018
 
 import scipy.io as sio
 from sklearn.model_selection import KFold
+from sklearn.metrics import confusion_matrix
 import tensorflow as tf
 import numpy as np
 import random
 import matplotlib.pyplot as plt
 
 #数据集相关常数
-DATA_SIZE = 10000#57348
+DATA_SIZE = 57348
 INPUT_NODE = 460
 OUTPUT_NODE = 2
 X_SIZE = 23
@@ -182,10 +183,10 @@ data = sio.loadmat('../data/PDNA-224-PSSM-Norm-11.mat')
 X = data['data']
 Y = data['target']
 
-rind = random.sample(range(57348),10000)
+rind = random.shuffle(range(DATA_SIZE))
 pred_Y = np.ndarray([DATA_SIZE,OUTPUT_NODE])
 
-X = X.reshape(57348,-1)
+X = X.reshape(DATA_SIZE,-1)
 X = X[rind]
 Y = Y[rind]
 kf = KFold(n_splits=5)
@@ -202,7 +203,20 @@ for i in range(DATA_SIZE):
         correct += 1
 print("correct accuracy: {}".format(correct/DATA_SIZE))
 
-cnf_matrix = confusion_matrix(Y, pred_Y)
+Y1 = np.ndarray([DATA_SIZE])
+PY = np.ndarray([DATA_SIZE])
+for i in range(DATA_SIZE):
+    if Y[i][0] == 1:
+        Y1[i] = 0
+    else:
+        Y1[i] = 1
+    
+    if pred_Y[i][0] == 1:
+        PY[i] = 0
+    else:
+        PY[i] = 1
+cnf_matrix = confusion_matrix(Y1, PY)
+
 print(cnf_matrix)
 recall = cnf_matrix[1][1] / (cnf_matrix[1][0] + cnf_matrix[1][1])
 print('recall: ', recall)
