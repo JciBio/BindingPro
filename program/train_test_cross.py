@@ -40,7 +40,7 @@ LEARNING_RATE = 1e-4 #基础学习率
 
 LEANING_RATE_DECAY = 0.99 #学习率的衰减率
 
-TRAINING_STEPS= 2000 #训练轮数
+TRAINING_STEPS= 2 #训练轮数
 
 #不同类的惩罚系数
 LOSS_COEF = [1, 10]
@@ -145,6 +145,8 @@ def cnn(x_train, x_test, y_train, y_test):
                 batch_ys = y_train[start:end]
                 sess.run(train_step,feed_dict={x:batch_xs, y: batch_ys, keep_prob: 0.5})
 
+            acc = sess.run(accuracy, feed_dict={x: x_test, y: y_test, keep_prob: 1.0})
+            print("Iter " + str(epoch) + " Testing Accuracy=" + str(acc))
         pred = sess.run(prediction, feed_dict={x: x_test, y: y_test, keep_prob: 1.0})
         return pred
 
