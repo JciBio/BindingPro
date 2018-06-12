@@ -33,7 +33,7 @@ CONV2_SIZE = 5
 
 FC_SIZE = 1024 #全连接层的节点个数
 
-BATCH_SIZE = 50 #
+BATCH_SIZE = 100 #
 
 LEARNING_RATE = 1e-4 #基础学习率
 
@@ -70,7 +70,8 @@ def max_pool(x):
     return tf.nn.max_pool(x,ksize=[1,2,2,1], strides=[1,2,2,1], padding='SAME')
 
 def cnn(x_train, x_test, y_train, y_test):
-    x_train_size = np.size(x_train, 0)
+    bx_train, by_train = balanceData(x_train, y_train)
+    x_train_size = np.size(bx_train, 0)
     #定义两个placeholder
     x = tf.placeholder(tf.float32, [None, INPUT_NODE])#23*20
     y = tf.placeholder(tf.float32, [None, OUTPUT_NODE])
@@ -145,6 +146,32 @@ def cnn(x_train, x_test, y_train, y_test):
         pred = sess.run(prediction, feed_dict={x: x_test, y: y_test, keep_prob: 1.0})
         return pred
 
+def balanceData(data: np.ndarray, target: np.ndarray, rate=3):
+    ind = np.equal(target[:, 1], 1)
+    negative_data = data[~ind]
+    positive_data = data[ind]
+    negative_target = target[~ind]
+    positive_target = target[ind]
+
+    if rate is None:
+        n1 = sum(ind)
+        rate = data.shape[0]//n1# 复制率
+    px = positive_data
+    py = positive_target
+    #复制少数类样本，生成新的均衡的样本集
+    for x in positive_data:
+        for i in range(rate):
+            px = np.row_stack((px,x))
+            py = np.row_stack((py,[0,1]))
+
+    X = np.row_stack((px,negative_data))
+    Y = np.row_stack((py,negative_target))
+
+    #随机打乱数据并返回
+    N = X.shape[0]
+    indx = list(range(N))
+    random.shuffle(indx)
+    return X[indx], Y[indx]
 
 # 绘制混淆矩阵的函数
 # 参数1  cm 混淆矩阵中显示的数值 二维数组
@@ -176,48 +203,50 @@ def plot_confusion_matrix(cm, classes, title='混淆矩阵', cmap=plt.cm.Greens)
     plt.xlabel('预测值')
     plt.ylabel('真实值')
 
+def main():
+    #load benchmark dataset
+    data = sio.loadmat('../data/PDNA-224-PSSM-Norm-11.mat')
 
-#load benchmark dataset
-data = sio.loadmat('../data/PDNA-224-PSSM-Norm-11.mat')
+    X = data['data']
+    Y = data['target']
 
-X = data['data']
-Y = data['target']
+    rind = random.shuffle(range(DATA_SIZE))
+    pred_Y = np.ndarray([DATA_SIZE,OUTPUT_NODE])
 
-rind = random.shuffle(range(DATA_SIZE))
-pred_Y = np.ndarray([DATA_SIZE,OUTPUT_NODE])
+    X = X.reshape(DATA_SIZE,-1)
+    X = X[rind]
+    Y = Y[rind]
+    kf = KFold(n_splits=5)
+    kf.get_n_splits(X)
+    for train_index, test_index in kf.split(X):
+        X_train, X_test = X[train_index], X[test_index]
+        Y_train, Y_test = Y[train_index], Y[test_index]
+        #print("len(X_train)={},len(Y_test)={}".format(len(X_train),len(Y_test)))
+        pred_Y[test_index] = cnn(X_train,X_test,Y_train,Y_test)
 
-X = X.reshape(DATA_SIZE,-1)
-X = X[rind]
-Y = Y[rind]
-kf = KFold(n_splits=5)
-kf.get_n_splits(X)
-for train_index, test_index in kf.split(X):
-    X_train, X_test = X[train_index], X[test_index]
-    Y_train, Y_test = Y[train_index], Y[test_index]
-    #print("len(X_train)={},len(Y_test)={}".format(len(X_train),len(Y_test)))
-    pred_Y[test_index] = cnn(X_train,X_test,Y_train,Y_test)
+    correct = 0
+    for i in range(DATA_SIZE):
+        if (Y[i] == pred_Y[i]).all():
+            correct += 1
+    print("correct accuracy: {}".format(correct/DATA_SIZE))
 
-correct = 0
-for i in range(DATA_SIZE):
-    if (Y[i] == pred_Y[i]).all():
-        correct += 1
-print("correct accuracy: {}".format(correct/DATA_SIZE))
+    Y1 = np.ndarray([DATA_SIZE])
+    PY = np.ndarray([DATA_SIZE])
+    for i in range(DATA_SIZE):
+        if Y[i][0] == 1:
+            Y1[i] = 0
+        else:
+            Y1[i] = 1
 
-Y1 = np.ndarray([DATA_SIZE])
-PY = np.ndarray([DATA_SIZE])
-for i in range(DATA_SIZE):
-    if Y[i][0] == 1:
-        Y1[i] = 0
-    else:
-        Y1[i] = 1
-    
-    if pred_Y[i][0] == 1:
-        PY[i] = 0
-    else:
-        PY[i] = 1
-cnf_matrix = confusion_matrix(Y1, PY)
+        if pred_Y[i][0] == 1:
+            PY[i] = 0
+        else:
+            PY[i] = 1
+    cnf_matrix = confusion_matrix(Y1, PY)
 
-print(cnf_matrix)
-recall = cnf_matrix[1][1] / (cnf_matrix[1][0] + cnf_matrix[1][1])
-print('recall: ', recall)
-plot_confusion_matrix(cnf_matrix, [0, 1], cmap=plt.cm.Reds)
+    print(cnf_matrix)
+    recall = cnf_matrix[1][1] / (cnf_matrix[1][0] + cnf_matrix[1][1])
+    print('recall: ', recall)
+    plot_confusion_matrix(cnf_matrix, [0, 1], cmap=plt.cm.Reds)
+
+main()

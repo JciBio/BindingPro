@@ -218,41 +218,72 @@ def split_dataset(data: np.ndarray, target: np.ndarray, rate=0.33):
 
     return x_train, x_test, y_train, y_test
 
+"""target是N行2列的数组，第1列的值为1表示该行样本为负类，第2列的值为1表示正类
+    rate是复制率
+    采用复制少数类样本的方法均衡数据集
+"""
+def balanceData(data: np.ndarray, target: np.ndarray, rate=3):
+    ind = np.equal(target[:, 1], 1)
+    negative_data = data[~ind]
+    positive_data = data[ind]
+    negative_target = target[~ind]
+    positive_target = target[ind]
 
-# load benchmark dataset
-data = sio.loadmat('../data/PDNA-224-PSSM-Norm-11.mat')
+    if rate is None:
+        n1 = sum(ind)
+        rate = data.shape[0]//n1# 复制率
+    px = positive_data
+    py = positive_target
+    #复制少数类样本，生成新的均衡的样本集
+    for x in positive_data:
+        for i in range(rate):
+            px = np.row_stack((px,x))
+            py = np.row_stack((py,[0,1]))
 
-X = data['data']
-Y = data['target']
-X = X.reshape(DATA_SIZE, -1)
+    X = np.row_stack((px,negative_data))
+    Y = np.row_stack((py,negative_target))
 
-X_train, X_test, Y_train, Y_test = split_dataset(X, Y)
+    #随机打乱数据并返回
+    N = X.shape[0]
+    indx = list(range(N))
+    random.shuffle(indx)
+    return X[indx], Y[indx]
 
-pred_Y = cnn(X_train, X_test, Y_train, Y_test)
+def main():
+    # load benchmark dataset
+    data = sio.loadmat('../data/PDNA-224-PSSM-Norm-11.mat')
 
-correct = 0
-total = X_test.shape[0]
+    X = data['data']
+    Y = data['target']
+    X = X.reshape(DATA_SIZE, -1)
 
-for i in range(total):
-    if (Y_test[i] == pred_Y[i]).all():
-        correct += 1
-print("In total {} test samples, correct accuracy: {}".format(total, correct / total))
+    X_train, X_test, Y_train, Y_test = split_dataset(X, Y)
 
-Y1 = np.ndarray([total])
-PY = np.ndarray([total])
-for i in range(total):
-    if Y_test[i][0] == 1:
-        Y1[i] = 0
-    else:
-        Y1[i] = 1
+    pred_Y = cnn(X_train, X_test, Y_train, Y_test)
 
-    if pred_Y[i][0] == 1:
-        PY[i] = 0
-    else:
-        PY[i] = 1
-cnf_matrix = confusion_matrix(Y1, PY)
+    correct = 0
+    total = X_test.shape[0]
 
-print(cnf_matrix)
-recall = cnf_matrix[1][1] / (cnf_matrix[1][0] + cnf_matrix[1][1])
-print('recall: ', recall)
-plot_confusion_matrix(cnf_matrix, [0, 1], cmap=plt.cm.Reds)
+    for i in range(total):
+        if (Y_test[i] == pred_Y[i]).all():
+            correct += 1
+    print("In total {} test samples, correct accuracy: {}".format(total, correct / total))
+
+    Y1 = np.ndarray([total])
+    PY = np.ndarray([total])
+    for i in range(total):
+        if Y_test[i][0] == 1:
+            Y1[i] = 0
+        else:
+            Y1[i] = 1
+
+        if pred_Y[i][0] == 1:
+            PY[i] = 0
+        else:
+            PY[i] = 1
+    cnf_matrix = confusion_matrix(Y1, PY)
+
+    print(cnf_matrix)
+    recall = cnf_matrix[1][1] / (cnf_matrix[1][0] + cnf_matrix[1][1])
+    print('recall: ', recall)
+    plot_confusion_matrix(cnf_matrix, [0, 1], cmap=plt.cm.Reds)
