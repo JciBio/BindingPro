@@ -121,16 +121,20 @@ def cnn(x_train, x_test, y_train, y_test):
     # 结果存放在一个布尔列表中
     correct_prediction = tf.equal(tf.argmax(prediction, 1), tf.argmax(y, 1))
     #交叉熵代价函数
-    #cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(labels=y,logits=prediction))
+    cross_entropy = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(labels=y,logits=prediction))
+    """
     #自定义损失函数，因为结合位点的标签是[0,1]共有3778，非结合位点的标签是[1,0]有53570，是非平衡数据集，
     cross_entropy = tf.nn.softmax_cross_entropy_with_logits_v2(labels=y, logits=prediction)
     y1 = tf.argmax(y,1)
     yshape = tf.shape(y)
     a = tf.ones([yshape[0]],dtype=tf.int64)
     loss = tf.reduce_mean( tf.where( tf.greater_equal( y1,a), cross_entropy * LOSS_COEF[1], cross_entropy * LOSS_COEF[0]))
+  
     #使用AdamOptimizer进行优化
     train_step = tf.train.AdamOptimizer(LEARNING_RATE).minimize(loss)
+    """
 
+    train_step = tf.train.AdadeltaOptimizer(LEARNING_RATE).minimize(cross_entropy)
     #求准确率
     accuracy = tf.reduce_mean(tf.cast(correct_prediction,tf.float32))
 
@@ -142,8 +146,10 @@ def cnn(x_train, x_test, y_train, y_test):
             batch_xs = x_train[start:end]
             batch_ys = y_train[start:end]
             sess.run(train_step,feed_dict={x:batch_xs, y: batch_ys, keep_prob: 0.5})
-
+            steploss = sess.run(cross_entropy,feed_dict={x:batch_xs, y: batch_ys, keep_prob: 0.5})
+            print("Iter " + str(i) + "Testing Accuracy=" + str(steploss))
         pred = sess.run(prediction, feed_dict={x: x_test, y: y_test, keep_prob: 1.0})
+
         return pred
 
 def balanceData(data: np.ndarray, target: np.ndarray, rate=3):
@@ -209,8 +215,8 @@ def main():
 
     X = data['data']
     Y = data['target']
-
-    rind = random.shuffle(range(DATA_SIZE))
+    rind = list(range(DATA_SIZE))
+    random.shuffle(rind)
     pred_Y = np.ndarray([DATA_SIZE,OUTPUT_NODE])
 
     X = X.reshape(DATA_SIZE,-1)
