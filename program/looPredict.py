@@ -143,19 +143,20 @@ def cnn(x_train,x_test,y_train,y_test,n_batch):
             
             acc = sess.run(accuracy, feed_dict={x:x_test, y:y_test, keep_prob:1.0})
             print("Iter " + str(epoch) + "Testing Accuracy=" + str(acc))
-            
-#load benchmark dataset
-data = sio.loadmat('../data/PDNA-224-PSSM-Norm-11.mat')
 
-X = data['data']
-Y = data['target']
-X = X.reshape(57348,-1)
-#loo = LeaveOneOut()
-kf = KFold(n_splits=5)
-kf.get_n_splits(X)
-for train_index, test_index in kf.split(X):
-    X_train, X_test = X[train_index], X[test_index]
-    Y_train, Y_test = Y[train_index], Y[test_index]
-    print("len(X_train)={},len(Y_test)={}".format(len(X_train),len(Y_test)))
-    cnn(X_train,X_test,Y_train,Y_test,100)
+def getData():
+    #load benchmark dataset
+    data = sio.loadmat('../data/PDNA-224-PSSM-Norm-11.mat')
+
+    X = data['data']
+    Y = data['target']
+    X = X.reshape(57348,-1)
+
+    kf = KFold(n_splits=5)
+    kf.get_n_splits(X)
+    for train_index, test_index in kf.split(X):
+        X_train, X_test = X[train_index], X[test_index]
+        Y_train, Y_test = Y[train_index], Y[test_index]
+        print("len(X_train)={},len(Y_test)={}".format(len(X_train),len(Y_test)))
+        cnn(X_train,X_test,Y_train,Y_test,100)
 
