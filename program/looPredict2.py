@@ -197,7 +197,8 @@ def synBalanceData(data: np.ndarray, target: np.ndarray, rate=3):
         dist = LA.norm(x-positive_data, axis=1)
         indx = np.argsort(dist)
         for i in range(nd):
-            sx[i] = x[i] + (x[i] - px[indx[1],i]) * random.random()
+            r = random.random()
+            sx[i] = (1-r)*x[i] + r* px[indx[1],i]
 
         px = np.row_stack((px, sx))
         py = np.row_stack((py,[0,1]))
