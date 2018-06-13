@@ -11,6 +11,7 @@ from sklearn.model_selection import KFold
 from sklearn.metrics import confusion_matrix
 import tensorflow as tf
 import numpy as np
+from numpy import linalg as LA
 import random
 import matplotlib.pyplot as plt
 
@@ -42,7 +43,7 @@ LEANING_RATE_DECAY = 0.99 #学习率的衰减率
 TRAINING_STEPS= 2000 #训练轮数
 
 #不同类的惩罚系数
-LOSS_COEF = [1, 10]
+#LOSS_COEF = [1, 10]
 
 #初始化权值
 def weight_variable(shape):
@@ -152,7 +153,7 @@ def cnn(x_train, x_test, y_train, y_test):
 
         return pred
 
-def balanceData(data: np.ndarray, target: np.ndarray, rate=3):
+def copyBalanceData(data: np.ndarray, target: np.ndarray, rate=3):
     ind = np.equal(target[:, 1], 1)
     negative_data = data[~ind]
     positive_data = data[ind]
@@ -178,6 +179,22 @@ def balanceData(data: np.ndarray, target: np.ndarray, rate=3):
     indx = list(range(N))
     random.shuffle(indx)
     return X[indx], Y[indx]
+
+def synBalanceData(data: np.ndarray, target: np.ndarray, rate=3):
+    ind = np.equal(target[:, 1], 1)
+    negative_data = data[~ind]
+    positive_data = data[ind]
+    negative_target = target[~ind]
+    positive_target = target[ind]
+
+    px = positive_data
+    py = positive_target
+
+    # 生成少数类样本，生成新的均衡的样本集
+    dist = LA.norm()
+    for x in positive_data:
+        dist = LA.norm(x-px, axis=1)
+
 
 # 绘制混淆矩阵的函数
 # 参数1  cm 混淆矩阵中显示的数值 二维数组
