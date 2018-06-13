@@ -71,7 +71,8 @@ def max_pool(x):
     return tf.nn.max_pool(x,ksize=[1,2,2,1], strides=[1,2,2,1], padding='SAME')
 
 def cnn(x_train, x_test, y_train, y_test):
-    bx_train, by_train = balanceData(x_train, y_train)
+    #bx_train, by_train = copyBalanceData(x_train, y_train)
+    bx_train, by_train = synBalanceData(x_train,y_train)
     x_train_size = np.size(bx_train, 0)
     #定义两个placeholder
     x = tf.placeholder(tf.float32, [None, INPUT_NODE])#23*20
@@ -189,12 +190,25 @@ def synBalanceData(data: np.ndarray, target: np.ndarray, rate=3):
 
     px = positive_data
     py = positive_target
-
+    nd = data.shape[1]
     # 生成少数类样本，生成新的均衡的样本集
-    dist = LA.norm()
     for x in positive_data:
-        dist = LA.norm(x-px, axis=1)
+        sx = np.zeros(nd)
+        dist = LA.norm(x-positive_data, axis=1)
+        indx = np.argsort(dist)
+        for i in range(nd):
+            sx[i] = x[i] + (x[i] - px[indx[1],i]) * random.random()
 
+        px = np.row_stack((px, sx))
+        py = np.row_stack((py,[0,1]))
+
+    X = np.row_stack((px, negative_data))
+    Y = np.row_stack((py, negative_target))
+    # 随机打乱数据并返回
+    N = X.shape[0]
+    indx = list(range(N))
+    random.shuffle(indx)
+    return X[indx], Y[indx]
 
 # 绘制混淆矩阵的函数
 # 参数1  cm 混淆矩阵中显示的数值 二维数组
