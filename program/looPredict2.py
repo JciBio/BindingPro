@@ -148,9 +148,10 @@ def cnn(x_train, x_test, y_train, y_test):
             batch_xs = x_train[start:end]
             batch_ys = y_train[start:end]
             sess.run(train_step,feed_dict={x:batch_xs, y: batch_ys, keep_prob: 0.7})
+            print("Iter " + str(i))
             if (i+1)%200 == 0:
                 steploss = sess.run(cross_entropy,feed_dict={x:x_test, y: y_test, keep_prob: 0.7})
-                print("Iter " + str(i) + " cross entropy=" + str(steploss))
+                print( "\r cross entropy=" + str(steploss))
         pred = sess.run(prediction, feed_dict={x: x_test, y: y_test, keep_prob: 1.0})
 
         return pred
@@ -198,7 +199,7 @@ def synBalanceData(data: np.ndarray, target: np.ndarray, rate=0):
     nd = data.shape[1]
     # 生成少数类样本，生成新的均衡的样本集
     for x in positive_data:
-        for i in range(rate):
+        for k in range(rate):
             sx = np.zeros(nd)
             dist = LA.norm(x-positive_data, axis=1)
             indx = np.argsort(dist)
