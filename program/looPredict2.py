@@ -148,20 +148,21 @@ def cnn(x_train, x_test, y_train, y_test):
             batch_xs = x_train[start:end]
             batch_ys = y_train[start:end]
             sess.run(train_step,feed_dict={x:batch_xs, y: batch_ys, keep_prob: 0.7})
-            steploss = sess.run(cross_entropy,feed_dict={x:x_test, y: y_test, keep_prob: 0.7})
-            print("Iter " + str(i) + " cross entropy=" + str(steploss))
+            if (i+1)%200 == 0:
+                steploss = sess.run(cross_entropy,feed_dict={x:x_test, y: y_test, keep_prob: 0.7})
+                print("Iter " + str(i) + " cross entropy=" + str(steploss))
         pred = sess.run(prediction, feed_dict={x: x_test, y: y_test, keep_prob: 1.0})
 
         return pred
 
-def copyBalanceData(data: np.ndarray, target: np.ndarray, rate=3):
+def copyBalanceData(data: np.ndarray, target: np.ndarray, rate=0):
     ind = np.equal(target[:, 1], 1)
     negative_data = data[~ind]
     positive_data = data[ind]
     negative_target = target[~ind]
     positive_target = target[ind]
 
-    if rate is None:
+    if rate==0:
         n1 = sum(ind)
         rate = data.shape[0]//n1# 复制率
     px = positive_data
@@ -181,27 +182,31 @@ def copyBalanceData(data: np.ndarray, target: np.ndarray, rate=3):
     random.shuffle(indx)
     return X[indx], Y[indx]
 
-def synBalanceData(data: np.ndarray, target: np.ndarray, rate=3):
+def synBalanceData(data: np.ndarray, target: np.ndarray, rate=0):
     ind = np.equal(target[:, 1], 1)
     negative_data = data[~ind]
     positive_data = data[ind]
     negative_target = target[~ind]
     positive_target = target[ind]
 
+    if rate==0:
+        n1 = sum(ind)
+        rate = data.shape[0]//n1# 复制率
+
     px = positive_data
     py = positive_target
     nd = data.shape[1]
     # 生成少数类样本，生成新的均衡的样本集
     for x in positive_data:
-        sx = np.zeros(nd)
-        dist = LA.norm(x-positive_data, axis=1)
-        indx = np.argsort(dist)
-        for i in range(nd):
-            r = random.random()
-            sx[i] = (1-r)*x[i] + r* px[indx[1],i]
-
-        px = np.row_stack((px, sx))
-        py = np.row_stack((py,[0,1]))
+        for i in range(rate):
+            sx = np.zeros(nd)
+            dist = LA.norm(x-positive_data, axis=1)
+            indx = np.argsort(dist)
+            for i in range(nd):
+                r = random.random()
+                sx[i] = (1-r)*x[i] + r* px[indx[1],i]
+            px = np.row_stack((px, sx))
+            py = np.row_stack((py,[0,1]))
 
     X = np.row_stack((px, negative_data))
     Y = np.row_stack((py, negative_target))
