@@ -27,10 +27,10 @@ NUM_LABELS = 2
 #配置神经网络的参数
 #第一层卷积层的尺寸和深度
 CONV1_DEEP = 32
-CONV1_SIZE = 5
+CONV1_SIZE = 3
 #第二层卷积层的尺寸和深度
 CONV2_DEEP = 64
-CONV2_SIZE = 5
+CONV2_SIZE = 3
 
 FC_SIZE = 1024 #全连接层的节点个数
 
@@ -82,15 +82,15 @@ def cnn(x_train, x_test, y_train, y_test):
     x_image = tf.reshape(x,[-1, X_SIZE, Y_SIZE, 1])
 
     #初始化第一个卷积层的权值和偏量
-    W_conv1 = weight_variable([CONV1_SIZE,CONV1_SIZE,NUM_CHANNELS,CONV1_DEEP])#5*5的采样窗口，３２个卷积核从4个平面抽取特征
+    W_conv1 = weight_variable([CONV1_SIZE,CONV1_SIZE,NUM_CHANNELS,CONV1_DEEP])#3*3的采样窗口，３２个卷积核从4个平面抽取特征
     b_conv1 = bias_variable([CONV1_DEEP])#每一个卷积核一个偏置值
 
     #把x_image和权值向量进行卷积，再加上偏置值，然后应用于relu激活函数
     h_conv1 = tf.nn.relu(conv2d(x_image, W_conv1) + b_conv1)
-    h_pool1 = max_pool(h_conv1)#进行max-pooling,12-by-40
+    h_pool1 = max_pool(h_conv1)#进行max-pooling,12-by-10
 
     #初始化第二个卷积层的权值和偏置
-    W_conv2 = weight_variable([CONV2_SIZE,CONV2_SIZE,CONV1_DEEP,CONV2_DEEP]) #5*5的采样窗口，64个卷积核从32个平面抽取特征
+    W_conv2 = weight_variable([CONV2_SIZE,CONV2_SIZE,CONV1_DEEP,CONV2_DEEP]) #3*3的采样窗口，64个卷积核从32个平面抽取特征
     b_conv2 = bias_variable([CONV2_DEEP]) #每一个卷积核一个偏置值
 
     #把H_pool1和权值向量进行卷积，再加上偏置值，然后应用于relu激活函数
@@ -192,7 +192,7 @@ def synBalanceData(data: np.ndarray, target: np.ndarray, rate=0):
 
     if rate==0:
         n1 = sum(ind)
-        rate = data.shape[0]//n1# 复制率
+        rate = negative_data.shape[0]//n1# 复制率
 
     px = positive_data
     py = positive_target
@@ -205,7 +205,7 @@ def synBalanceData(data: np.ndarray, target: np.ndarray, rate=0):
             indx = np.argsort(dist)
             for i in range(nd):
                 r = random.random()
-                sx[i] = (1-r)*x[i] + r* px[indx[1],i]
+                sx[i] = (1-r)*x[i] + r* positive_data[indx[1],i]
             px = np.row_stack((px, sx))
             py = np.row_stack((py,[0,1]))
 
