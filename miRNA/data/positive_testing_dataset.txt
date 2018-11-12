@@ -1,0 +1,372 @@
+>hsa-mi-1302-5 MI0006366 Homo sapiens mi-1302-5 stem-oop
+UGCCCGGCCUCCCAUUAAAUUGGUUUUUCAGACAAAUCACAAAUUUGUUUAGGUAUAAGUAUAUCCCAUGUAAUCUUUGGGACAUACUUAUGCUAAAAUAAUUGUUCCUUGUUGAUUGGAAAUUUUAAUUUUAAUUAGGUGUCCUGUAUU
+......((((......(((((((..((((.(((((...((((..((((((.(((((((((((.(((((.........))))).))))))))))).))))))))))...))))).....))))..))))))).....))))..........
+>hsa-mi-1247 MI0006382 Homo sapiens mi-1247 stem-oop
+CCGCUUGCCUCGCCCAGCGCAGCCCCGGCCGCUGGGCGCACCCGUCCCGUUCGUCCCCGGACGUUGCUCUCUACCCCGGGAACGUCGAGACUGGAGCGCCCGAACUGAGCCACCUUCGCGGACCCCGAGAGCGGCG
+.((((.((((((.((.(((.((....(((((.(((((((.((.(((.((..(((.(((((..((........)).))))).))).)).))).)).)))))))...)).)))..)).)))))....)))).))))))
+>hsa-mi-1272 MI0006408 Homo sapiens mi-1272 stem-oop
+CCAGAUCAGAUCUGGGUGCGAUGAUGAUGGCAGCAAAUUCUGAAAACGUGCUCAGUGUCUUUAUAACAGGAAAGCCGUAAACUUAGAAAUGUAGGCUGCAGCUCGUGUGCUCUGUGGUCUGGGCUGGUA
+((((..((((((.(((..(.((((.(...(((((.(.((((((..(((.(((.....((((......)))).))))))....)))))).)....)))))..))))))..)))...))))))..))))..
+>hsa-mi-498 MI0003142 Homo sapiens mi-498 stem-oop
+AACCCUCCUUGGGAAGUGAAGCUCAGGCUGUGAUUUCAAGCCAGGGGGCGUUUUUCUAUAACUGGAUGAAAAGCACCUCCAGAGCUUGAAGCUCACAGUUUGAGAGCAAUCGUCUAAGGAAGUU
+.....((((((((...((...(((((((((((((((((((((.(((((.(((((((...........))))))).))))).).)))))))).))))))))))))..))....))))))))....
+>hsa-mi-1256 MI0006390 Homo sapiens mi-1256 stem-oop
+AGUCAGCCUGUUGAAGCUUUGAAGCUUUGAUGCCAGGCAUUGACUUCUCACUAGCUGUGAAAGUCCUAGCUAAAGAGAAGUCAAUGCAUGACAUCUUGUUUCAAUAGAUGGCUGUUUCA
+(((((..((((((((((...........((((.((.(((((((((((((..((((((.(.....).))))))..))))))))))))).)).))))..)))))))))).)))))......
+>hsa-mi-492 MI0003131 Homo sapiens mi-492 stem-oop
+CAACUACAGCCACUACUACAGGACCAUCGAGGACCUGCGGGACAAGAUUCUUGGUGCCACCAUUGAGAACGCCAGGAUUGUCCUGCAGAUCAACAAUGCUCAACUGGCUGCAGAUG
+...((.((((((.........((.(((.(..((.(((((((((((...((((((((.............))))))))))))))))))).))..).))).))...)))))).))...
+>hsa-mi-765 MI0005116 Homo sapiens mi-765 stem-oop
+UUUAGGCGCUGAUGAAAGUGGAGUUCAGUAGACAGCCCUUUUCAAGCCCUACGAGAAACUGGGGUUUCUGGAGGAGAAGGAAGGUGAUGAAGGAUCUGUUCUCGUGAGCCUGAA
+.((((((....((((.((..((.((((....((...(((((((((((((((........))))))))......)))))))...))..))))...))..)).))))..)))))).
+>hsa-mi-431 MI0001721 Homo sapiens mi-431 stem-oop
+UCCUGCUUGUCCUGCGAGGUGUCUUGCAGGCCGUCAUGCAGGCCACACUGACGGUAACGUUGCAGGUCGUCUUGCAGGGCUUCUCGCAAGACGACAUCCUCAUCACCAACGACG
+...((.(((((.(((((((.((((((((((.((.(.((((((((........)))....))))).).)).)))))))))).))))))).)))))))..................
+>hsa-mi-1255a MI0006389 Homo sapiens mi-1255a stem-oop
+AUUGGAAAUCCUUUGAGUUGCUUCUCAAGGAUGAGCAAAGAAAGUAGAUUUUUUAGAUUCUAAAGAAACUAUCUUCUUUGCUCAUCCUUGAGAAGCAACUCCUUAUCCAUUAA
+..((((........((((((((((((((((((((((((((((..(((.((((((((...)))))))).)))..))))))))))))))))))))))))))))....))))....
+>hsa-mi-1298 MI0003938 Homo sapiens mi-1298 stem-oop
+AGACGAGGAGUUAAGAGUUCAUUCGGCUGUCCAGAUGUAUCCAAGUACCCUGUGUUAUUUGGCAAUAAAUACAUCUGGGCAACUGACUGAACUUUUCACUUUUCAUGACUCA
+....(((((((.(((((((((.((((.((((((((((((((((((((........)))))))......))))))))))))).)))).))))))))).)))))))........
+>hsa-mi-448 MI0001637 Homo sapiens mi-448 stem-oop
+GCCGGGAGGUUGAACAUCCUGCAUAGUGCUGCCAGGAAAUCCCUAUUUCAUAUAAGAGGGGGCUGGCUGGUUGCAUAUGUAGGAUGUCCCAUCUCCCAGCCCACUUCGUCA
+((.(((((((.(.((((((((((((.(((.(((((..(..((((...((......))))))..)..))))).))))))))))))))).).))))))).))...........
+>hsa-mi-215 MI0000291 Homo sapiens mi-215 stem-oop
+AUCAUUCAGAAAUGGUAUACAGGAAAAUGACCUAUGAAUUGACAGACAAUAUAGCUGAGUUUGUCUGUCAUUUCUUUAGGCCAAUAUUCUGUAUGACUGUGCUACUUCAA
+........(((.((((((((((((.(.((.((((.(((.((((((((((...........)))))))))).)))..)))).)).).))))))......)))))).)))..
+>hsa-mi-223 MI0000300 Homo sapiens mi-223 stem-oop
+CCUGGCCUCCUGCAGUGCCACGCUCCGUGUAUUUGACAAGCUGAGUUGGACACUCCAUGUGGUAGAGUGUCAGUUUGUCAAAUACCCCAAGUGCGGCACAUGCUUACCAG
+.((((......((((((((.((((..(.((((((((((((((......(((((((.........))))))))))))))))))))).)..)))).))))).)))...))))
+>hsa-mi-181c MI0000271 Homo sapiens mi-181c stem-oop
+CGGAAAAUUUGCCAAGGGUUUGGGGGAACAUUCAACCUGUCGGUGAGUUUGGGCAGCUCAGGCAAACCAUCGACCGUUGAGUGGACCCUGAGGCCUGGAAUUGCCAUCCU
+.(((.......(((.((.((..(((...((((((((..(((((((.(((((...........)))))))))))).))))))))..)))..)).)))))........))).
+>hsa-mi-182 MI0000272 Homo sapiens mi-182 stem-oop
+GAGCUGCUUGCCUCCCCCCGUUUUUGGCAAUGGUAGAACUCACACUGGUGAGGUAACAGGAUCCGGUGGUUCUAGACUUGCCAACUAUGGGGCGAGGACUCAGCCGGCAC
+..((((((..((((.((((((..(((((((.(.((((((...((((((..............))))))))))))..))))))))..)))))).))))....)).))))..
+>hsa-mi-196a-2 MI0000279 Homo sapiens mi-196a-2 stem-oop
+UGCUCGCUCAGCUGAUCUGUGGCUUAGGUAGUUUCAUGUUGUUGGGAUUGAGUUUUGAACUCGGCAACAAGAAACUGCCUGAGUUACAUCAGUCGGUUUUCGUCGAGGGC
+..(((((..(((((((.((((((((((((((((((.((((((((((.(..(...)..).)))))))))).))))))))))))))))))...)))))))...).))))...
+>hsa-mi-767 MI0003763 Homo sapiens mi-767 stem-oop
+GCUUUUAUAUUGUAGGUUUUUGCUCAUGCACCAUGGUUGUCUGAGCAUGCAGCAUGCUUGUCUGCUCAUACCCCAUGGUUUCUGAGCAGGAACCUUCAUUGUCUACUGC
+((....(((.((.(((((((((((((.(.(((((((..((.((((((.((((.....)))).)))))).)).))))))).).))))))))))))).)).))).....))
+>hsa-mi-124-2 MI0000444 Homo sapiens mi-124-2 stem-oop
+AUCAAGAUUAGAGGCUCUGCUCUCCGUGUUCACAGCGGACCUUGAUUUAAUGUCAUACAAUUAAGGCACGCGGUGAAUGCCAAGAGCGGAGCCUACGGCUGCACUUGAA
+.(((((..(((((((((((((((..((((((((.(((..((((((((...........))))))))..))).))))))))..))))))))))))....)))..))))).
+>hsa-mi-1253 MI0006387 Homo sapiens mi-1253 stem-oop
+AGCAGCAAGAGAUAGAAUCCAAAAGAGAAGAAGAUCAGCCUGCAGAUGUGGACUGCUAAAUGCAGGCUGAUCUUCUCCCCUUUGGGAUUCUCUUAUGAGAAGCCA
+.((..((.((((..((((((.((((.(.((((((((((((((((....(((....)))..)))))))))))))))).).)))).)))))))))).))....))..
+>hsa-mi-548f-4 MI0006377 Homo sapiens mi-548f-4 stem-oop
+GAGUUCUAACGUAUUAGGUUGGUGCAAAAGUAAUAGUGGUUUUUGCCAUUAAAAGUAAUGACAAAAACUGUAAUUACUUUUGGAACAAUAUUAAUAGAAUUUCAG
+((((((((...((....((((.(.((((((((((.(..(((((((.(((((....))))).)))))))..).)))))))))).).))))..)).))))))))...
+>hsa-mi-496 MI0003136 Homo sapiens mi-496 stem-oop
+CCCAAGUCAGGUACUCGAAUGGAGGUUGUCCAUGGUGUGUUCAUUUUAUUUAUGAUGAGUAUUACAUGGCCAAUCUCCUUUCGGUACUCAAUUCUUCUUGGG
+((((((...(((((.((((.((((((((.(((((..(((((((((........)))))))))..))))).)))))))).)))))))))........))))))
+>hsa-mi-450a-2 MI0003187 Homo sapiens mi-450a-2 stem-oop
+CCAAAGAAAGAUGCUAAACUAUUUUUGCGAUGUGUUCCUAAUAUGUAAUAUAAAUGUAUUGGGGACAUUUUGCAUUCAUAGUUUUGUAUCAAUAAUAUGG
+.........(((((.(((((((...(((((.(((((((((((((((.......))))))))))))))).)))))...))))))).)))))..........
+>hsa-mi-608 MI0003621 Homo sapiens mi-608 stem-oop
+GGGCCAAGGUGGGCCAGGGGUGGUGUUGGGACAGCUCCGUUUAAAAAGGCAUCUCCAAGAGCUUCCAUCAAAGGCUGCCUCUUGGUGCAGCACAGGUAGA
+..(((..(.((.((((((((..((.((.(((.(((((.....................))))))))....)).))..)).)))))).)).)...)))...
+>hsa-mi-638 MI0003653 Homo sapiens mi-638 stem-oop
+GUGAGCGGGCGCGGCAGGGAUCGCGGGCGGGUGGCGGCCUAGGGCGCGGAGGGCGGACCGGGAAUGGCGCGCCGUGCGCCGCCGGCGUAACUGCGGCGCU
+.......(((((.((((..(.(((.((((((((((((((..((.(((.....)))..))......))).))))..)).))))).))))..)))).)))))
+>hsa-mi-636 MI0003651 Homo sapiens mi-636 stem-oop
+UGGCGGCCUGGGCGGGAGCGCGCGGGCGGGGCCGGCCCCGCUGCCUGGAAUUAACCCCGCUGUGCUUGCUCGUCCCGCCCGCAGCCCUAGGCGGCGUCG
+..((.(((((((.....((..(((((((((((.(((..(((.((..((......))..)).)))...))).))))))))))).))))))))).))....
+>hsa-mi-548f-2 MI0006375 Homo sapiens mi-548f-2 stem-oop
+UAAUAACUAUUAGGUUGGUGCGAACAUAAUUGCAGUUUUUAUCAUUACUUUUAAUGGCAAAAACUGUAAUUACUUUUGCACCAACCUAAUAUUUUAGU
+.......(((((((((((((((((..((((((((((((((..(((((....)))))..))))))))))))))..))))))))))))))))).......
+>hsa-mi-514-1 MI0003198 Homo sapiens mi-514-1 stem-oop
+AACAUGUUGUCUGUGGUACCCUACUCUGGAGAGUGACAAUCAUGUAUAAUUAAAUUUGAUUGACACUUCUGUGAGUAGAGUAACGCAUGACACGUACG
+...((((.(((((((.(((.((((((((((.((((.((((((.((........)).)))))).)))))))).)))))).))).)))).)))))))...
+>hsa-mi-618 MI0003632 Homo sapiens mi-618 stem-oop
+CUCUUGUUCACAGCCAAACUCUACUUGUCCUUCUGAGUGUAAUUACGUACAUGCAGUAGCUCAGGAGACAAGCAGGUUUACCCUGUGGAUGAGUCUGA
+..((..(((((((..((((.((.((((((.((((((((.....(((((....)).))))))))))))))))).))))))...)))))))..)).....
+>hsa-mi-770 MI0005118 Homo sapiens mi-770 stem-oop
+AGGAGCCACCUUCCGAGCCUCCAGUACCACGUGUCAGGGCCACAUGAGCUGGGCCUCGUGGGCCUGAUGUGGUGCUGGGGCCUCAGGGGUCUGCUCUU
+((((((.(((((..(((.((((((((((((((....(((((.((((((......))))))))))).)))))))))))))).))).)))))..))))))
+>hsa-mi-633 MI0003648 Homo sapiens mi-633 stem-oop
+AACCUCUCUUAGCCUCUGUUUCUUUAUUGCGGUAGAUACUAUUAACCUAAAAUGAGAAGGCUAAUAGUAUCUACCACAAUAAAAUUGUUGUGAGGAUA
+..((((...((((....((((...(((((.((((((((((((((.(((.........))).)))))))))))))).))))))))).)))).))))...
+>hsa-mi-23b MI0000439 Homo sapiens mi-23b stem-oop
+CUCAGGUGCUCUGGCUGCUUGGGUUCCUGGCAUGCUGAUUUGUGACUUAAGAUUAAAAUCACAUUGCCAGGGAUUACCACGCAACCACGACCUUGGC
+.(((((.(.(((((.(((.(((((((((((((((.((((((..............)))))))).))))))))))..))).))).))).)))))))).
+>hsa-mi-630 MI0003644 Homo sapiens mi-630 stem-oop
+AACUUAACAUCAUGCUACCUCUUUGUAUCAUAUUUUGUUAUUCUGGUCACAGAAUGACCUAGUAUUCUGUACCAGGGAAGGUAGUUCUUAACUAUAU
+.............(((((((((((((((.(((((..(((((((((....)))))))))..)))))...))).))))).)))))))............
+>hsa-mi-548a-1 MI0003593 Homo sapiens mi-548a-1 stem-oop
+UGCAGGGAGGUAUUAAGUUGGUGCAAAAGUAAUUGUGAUUUUUGCCAUUAAAAGUAACGACAAAACUGGCAAUUACUUUUGCACCAAACCUGGUAUU
+..((((...........(((((((((((((((((((.(.(((((.(.(((....))).).))))).).))))))))))))))))))).)))).....
+>hsa-mi-634 MI0003649 Homo sapiens mi-634 stem-oop
+AAACCCACACCACUGCAUUUUGGCCAUCGAGGGUUGGGGCUUGGUGUCAUGCCCCAAGAUAACCAGCACCCCAACUUUGGACAGCAUGGAUUAGUCU
+...........((((.((((..((..((.((((((((((.((((((((.((...)).))).)))))..)))))))))).))..))..))))))))..
+>hsa-mi-586 MI0003594 Homo sapiens mi-586 stem-oop
+AUGGGGUAAAACCAUUAUGCAUUGUAUUUUUAGGUCCCAAUACAUGUGGGCCCUAAAAAUACAAUGCAUAAUGGUUUUUCACUCUUUAUCUUCUUAU
+..((((((((((((((((((((((((((((((((.((((.......)))).)))))))))))))))))))))))))))..)))))............
+>hsa-mi-561 MI0003567 Homo sapiens mi-561 stem-oop
+CUUCAUCCACCAGUCCUCCAGGAACAUCAAGGAUCUUAAACUUUGCCAGAGCUACAAAGGCAAAGUUUAAGAUCCUUGAAGUUCCUGGGGGAACCAU
+.............((((((((((((.(((((((((((((((((((((...........))))))))))))))))))))).)))))))))))).....
+>hsa-mi-651 MI0003666 Homo sapiens mi-651 stem-oop
+AAUCUAUCACUGCUUUUUAGGAUAAGCUUGACUUUUGUUCAAAUAAAAAUGCAAAAGGAAAGUGUAUCCUAAAAGGCAAUGACAGUUUAAUGUGUUU
+...((.(((.((((((((((((((.((((..(((((((............)))))))..)))).)))))))))))))).))).))............
+>hsa-mi-590 MI0003602 Homo sapiens mi-590 stem-oop
+UAGCCAGUCAGAAAUGAGCUUAUUCAUAAAAGUGCAGUAUGGUGAAGUCAAUCUGUAAUUUUAUGUAUAAGCUAGUCUCUGAUUGAAACAUGCAGCA
+....((((((((.((.(((((((.(((((((.(((((..(((.....)))..))))).))))))).))))))).)).))))))))............
+>hsa-mi-1254 MI0006388 Homo sapiens mi-1254 stem-oop
+GGUGGGAGGAUUGCUUGAGCCUGGAAGCUGGAGCCUGCAGUGAACUAUCAUUGUGCCACUGUACUCCAGCCUAGGCAACAAAAUGAAAUCCUGUCUA
+...((.((((((..(((.((((((..(((((((..(((((((.((.......))..))))))))))))))))))))..))).....)))))).))..
+>hsa-mi-655 MI0003677 Homo sapiens mi-655 stem-oop
+AACUAUGCAAGGAUAUUUGAGGAGAGGUUAUCCGUGUUAUGUUCGCUUCAUUCAUCAUGAAUAAUACAUGGUUAACCUCUUUUUGAAUAUCAGACUC
+...........((((((..(((((((((((.((((((..((((((............))))))..)))))).)))))))))))..))))))......
+>hsa-mi-597 MI0003609 Homo sapiens mi-597 stem-oop
+UACUUACUCUACGUGUGUGUCACUCGAUGACCACUGUGAAGACAGUAAAAUGUACAGUGGUUCUCUUGUGGCUCAAGCGUAAUGUAGAGUACUGGUC
+.(((((((((((((.((.(((((..((.(((((((((....(((......)))))))))))).))..))))).))......))))))))))..))).
+>hsa-mi-549 MI0003679 Homo sapiens mi-549 stem-oop
+AGACAUGCAACUCAAGAAUAUAUUGAGAGCUCAUCCAUAGUUGUCACUGUCUCAAAUCAGUGACAACUAUGGAUGAGCUCUUAAUAUAUCCCAGGC
+.................((((((((((((((((((((((((((((((((........)))))))))))))))))))))))))))))))).......
+>hsa-mi-622 MI0003636 Homo sapiens mi-622 stem-oop
+AGAGAAGCUGGACAAGUACUGGUCUCAGCAGAUUGAGGAGAGCACCACAGUGGUCAUCACACAGUCUGCUGAGGUUGGAGCUGCUGAGAUGACACU
+.......((((...(((.((..(((((((((((((.(((((.(((....))).)).)).).)))))))))))))..)).))).)).))........
+>hsa-mi-92b MI0003560 Homo sapiens mi-92b stem-oop
+CGGGCCCCGGGCGGGCGGGAGGGACGGGACGCGGUGCAGUGUUGUUUUUUCCCCCGCCAAUAUUGCACUCGUCCCGGCCUCCGGCCCCCCCGGCCC
+.(((((..(((.((((.(((((..(((((((.((((((((((((.............))))))))))))))))))).))))).))))))).)))))
+>hsa-mi-650 MI0003665 Homo sapiens mi-650 stem-oop
+CAGUGCUGGGGUCUCAGGAGGCAGCGCUCUCAGGACGUCACCACCAUGGCCUGGGCUCUGCUCCUCCUCACCCUCCUCACUCAGGGCACAGGUGAU
+..((((((((((...((((((.((((..((((((.(((.......))).))))))...)))))))))).)))))..........))))).......
+>hsa-mi-411 MI0003675 Homo sapiens mi-411 stem-oop
+UGGUACUUGGAGAGAUAGUAGACCGUAUAGCGUACGCUUUAUCUGUGACGUAUGUAACACGGUCCACUAACCCUCAGUAUCAAAUCCAUCCCCGAG
+(((((((..(((.(.((((.((((((.(.((((((((.........).))))))).).)))))).)))).).))))))))))..............
+>hsa-mi-562 MI0003568 Homo sapiens mi-562 stem-oop
+AGUGAAAUUGCUAGGUCAUAUGGUCAGUCUACUUUUAGAGUAAUUGUGAAACUGUUUUUCAAAGUAGCUGUACCAUUUGCACUCCCUGUGGCAAU
+......((((((((((((.((((((((.(((((((..(((.(((.(.....).))).))))))))))))).))))).)).))).....)))))))
+>hsa-mi-340 MI0000802 Homo sapiens mi-340 stem-oop
+UUGUACCUGGUGUGAUUAUAAAGCAAUGAGACUGAUUGUCAUAUGUCGUUUGUGGGAUCCGUCUCAGUUACUUUAUAGCCAUACCUGGUAUCUUA
+..(((((.((((((..(((((((...((((((.((((.(((((.......))))))))).))))))....)))))))..)))))).)))))....
+>hsa-mi-591 MI0003603 Homo sapiens mi-591 stem-oop
+UCUUAUCAAUGAGGUAGACCAUGGGUUCUCAUUGUAAUAGUGUAGAAUGUUGGUUAACUGUGGACUCCCUGGCUCUGUCUCAAAUCUACUGAUUC
+.........((((..((((((.((((((.((...((((.((.....))....))))..)).)))).)).))).)))..)))).............
+>hsa-mi-609 MI0003622 Homo sapiens mi-609 stem-oop
+UGCUCGGCUGUUCCUAGGGUGUUUCUCUCAUCUCUGGUCUAUAAUGGGUUAAAUAGUAGAGAUGAGGGCAACACCCUAGGAACAGCAGAGGAACC
+..(((.(((((((((((((((((.((((((((((((..((((..........)))))))))))))))).))))))))))))))))).))).....
+>hsa-mi-326 MI0000808 Homo sapiens mi-326 stem-oop
+CUCAUCUGUCUGUUGGGCUGGAGGCAGGGCCUUUGUGAAGGCGGGUGGUGCUCAGAUCGCCUCUGGGCCCUUCCUCCAGCCCCGAGGCGGAUUCA
+...((((((((...((((((((((.(((((((....((.(((((.((.....))..))))))).))))))).))))))))))..))))))))...
+>hsa-mi-644 MI0003659 Homo sapiens mi-644 stem-oop
+UUUUUUUUUAGUAUUUUUCCAUCAGUGUUCAUAAGGAAUGUUGCUCUGUAGUUUUCUUAUAGUGUGGCUUUCUUAGAGCAAAGAUGGUUCCCUA
+..................(((((..(((((.(((((((.((..(.((((((.....)))))).)..))))))))))))))..))))).......
+>hsa-mi-646 MI0003661 Homo sapiens mi-646 stem-oop
+GAUCAGGAGUCUGCCAGUGGAGUCAGCACACCUGCUUUUCACCUGUGAUCCCAGGAGAGGAAGCAGCUGCCUCUGAGGCCUCAGGCUCAGUGGC
+..(((.(((((((((..(((((.((((.....((((((((.((((......)))).)).)))))))))).))))).)))...))))))..))).
+>hsa-mi-331 MI0000812 Homo sapiens mi-331 stem-oop
+GAGUUUGGUUUUGUUUGGGUUUGUUCUAGGUAUGGUCCCAGGGAUCCCAGAUCAAACCAGGCCCCUGGGCCUAUCCUAGAACCAACCUAAGCUC
+............(((((((((.((((((((.((((.(((((((..(.............)..))))))).)))))))))))).)))))))))..
+>hsa-mi-432 MI0003133 Homo sapiens mi-432 stem-oop
+UGACUCCUCCAGGUCUUGGAGUAGGUCAUUGGGUGGAUCCUCUAUUUCCUUACGUGGGCCACUGGAUGGCUCCUCCAUGUCUUGGAGUAGAUCA
+.((((.(((((((.(.(((((..(((((((.(((((.(((.(((......)).).)))))))).))))))).))))).).))))))).)).)).
+>hsa-mi-532 MI0003205 Homo sapiens mi-532 stem-oop
+CGACUUGCUUUCUCUCCUCCAUGCCUUGAGUGUAGGACCGUUGGCAUCUUAAUUACCCUCCCACACCCAAGGCUUGCAAAAAAGCGAGCCU
+.(.((((((((........((.((((((.((((.(((..((.............))..))).)))).)))))).))....)))))))).).
+>hsa-mi-1178 MI0006271 Homo sapiens mi-1178 stem-oop
+GCGUUGGCUGGCAGAGGAAGGGAAGGGUCCAGGGUCAGCUGAGCAUGCCCUCAGGUUGCUCACUGUUCUUCCCUAGAAUGUCAGGUGAUGU
+((((((.((((((.....(((((((..(...((((.(.(((((......))))).).))))...)..)))))))....)))))).))))))
+>hsa-mi-412 MI0002464 Homo sapiens mi-412 stem-oop
+CUGGGGUACGGGGAUGGAUGGUCGACCAGUUGGAAAGUAAUUGUUUCUAAUGUACUUCACCUGGUCCACUAGCCGUCCGUAUCCGCUGCAG
+...((((((..((((((.((((.((((((.(((..((((((((....)))).))))))).)))))).)))).)))))))))))).......
+>hsa-mi-520g MI0003166 Homo sapiens mi-520g stem-oop
+UCCCAUGCUGUGACCCUCUAGAGGAAGCACUUUCUGUUUGUUGUCUGAGAAAAAACAAAGUGCUUCCCUUUAGAGUGUUACCGUUUGGGA
+(((((.((.(((((.(((((((((((((((((..(((((.............))))))))))))).))))))))).))))).)).)))))
+>hsa-mi-516b-1 MI0003172 Homo sapiens mi-516b-1 stem-oop
+UCUCAGGCUGUGACCAUCUGGAGGUAAGAAGCACUUUCUGUUUUGUGAAAGAAAAGAAAGUGCUUCCUUUCAGAGGGUUACUCUUUGAGA
+(((((((..((((((.((((((((...((((((((((((.((((.....)))).)))))))))))))))))))).))))))..)))))))
+>hsa-mi-1183 MI0006276 Homo sapiens mi-1183 stem-oop
+AUUAUUCAAAUGCUCGGAGACACAGAACAUUAGAGAAGACAGGAGUUCACUGUAGGUGAUGGUGAGAGUGGGCAUGGAGCAGGAGUGCC
+..(((((...(((((.(.(.(((....(((((..(...((((.......))))...)..)))))...)))..).).))))).)))))..
+>hsa-mi-16-1 MI0000070 Homo sapiens mi-16-1 stem-oop
+GUCAGCAGUGCCUUAGCAGCACGUAAAUAUUGGCGUUAAGAUUCUAAAAUUAUCUCCAGUAUUAACUGUGCUGCUGAAGUAAGGUUGAC
+((((((..(((.((((((((((((.((((((((.(.(((..........))).).)))))))).)).)))))))))).)))..))))))
+>hsa-mi-944 MI0005769 Homo sapiens mi-944 stem-oop
+GUUCCAGACACAUCUCAUCUGAUAUACAAUAUUUUCUUAAAUUGUAUAAAGAGAAAUUAUUGUACAUCGGAUGAGCUGUGUCUGGGAU
+((((((((((((.((((((((((.(((((((.((((((............)))))).))))))).)))))))))).))))))))))))
+>hsa-mi-30b MI0000441 Homo sapiens mi-30b stem-oop
+ACCAAGUUUCAGUUCAUGUAAACAUCCUACACUCAGCUGUAAUACAUGGAUUGGCUGGGAGGUGGAUGUUUACUUCAGCUGACUUGGA
+.(((((..((((((...((((((((((.((.((((((((............))))))))..))))))))))))...))))))))))).
+>hsa-mi-29c MI0000735 Homo sapiens mi-29c stem-oop
+AUCUCUUACACAGGCUGACCGAUUUCUCCUGGUGUUCAGAGUCUGUUUUUGUCUAGCACCAUUUGAAAUCGGUUAUGAUGUAGGGGGA
+.(((((((((((...(((((((((((...((((((((((((.....)))))...)))))))...))))))))))))).))))))))).
+>hsa-mi-320c-1 MI0003778 Homo sapiens mi-320c-1 stem-oop
+UUUGCAUUAAAAAUGAGGCCUUCUCUUCCCAGUUCUUCCCAGAGUCAGGAAAAGCUGGGUUGAGAGGGUAGAAAAAAAAUGAUGUAGG
+.((((((((........((((((((..(((((((.((((........)))).)))))))..))))))))..........)))))))).
+>hsa-mi-384 MI0001145 Homo sapiens mi-384 stem-oop
+UGUUAAAUCAGGAAUUUUAAACAAUUCCUAGACAAUAUGUAUAAUGUUCAUAAGUCAUUCCUAGAAAUUGUUCAUAAUGCCUGUAACA
+.((((...((((.(((...(((((((.((((((..((((.........)))).))).....))).)))))))...))).)))))))).
+>hsa-mi-1291 MI0006353 Homo sapiens mi-1291 stem-oop
+GGUAGAAUUCCAGUGGCCCUGACUGAAGACCAGCAGUUGUACUGUGGCUGUUGGUUUCAAGCAGAGGCCUAAAGGACUGUCUUCCUG
+((.(((..(((...(((((((.((..(((((((((((..(...)..)))))))))))..))))).))))....)))...))).))..
+>hsa-mi-520c MI0003158 Homo sapiens mi-520c stem-oop
+UCUCAGGCUGUCGUCCUCUAGAGGGAAGCACUUUCUGUUGUCUGAAAGAAAAGAAAGUGCUUCCUUUUAGAGGGUUACCGUUUGAGA
+((((((((.((..(((((((((((((((((((((((....((.....))..)))))))))))))))))))))))..)).))))))))
+>hsa-mi-153-2 MI0000464 Homo sapiens mi-153-2 stem-oop
+AGCGGUGGCCAGUGUCAUUUUUGUGAUGUUGCAGCUAGUAAUAUGAGCCCAGUUGCAUAGUCACAAAAGUGAUCAUUGGAAACUGUG
+.(((((..(((((((((((((((((((..(((((((.((.......))..)))))))..))))))))))))).))))))..))))).
+>hsa-mi-548m MI0006400 Homo sapiens mi-548m stem-oop
+AUAUUAGGUUGGUGCAAAGGUAUUUGUGGUUUUUGUCAUUAAAGUAAUGCAAAAGCCACAAAUACCUUUGCACCAACCUAAUAUUA
+(((((((((((((((((((((((((((((((((((.(((((...))))))))))))))))))))))))))))))))))))))))..
+>hsa-mi-1265 MI0006401 Homo sapiens mi-1265 stem-oop
+AUGGUUUGGGACUCAGGAUGUGGUCAAGUGUUGUUAAGGCAUGUUCAGGAACAAUACUUGACCACAUUUUGAAUUCCAAACCAUAU
+(((((((((((.(((((((((((((((((((((((...(......)...))))))))))))))))))))))).)))))))))))..
+>hsa-mi-1303 MI0006370 Homo sapiens mi-1303 stem-oop
+GGCUGGGCAACAUAGCGAGACCUCAACUCUACAAUUUUUUUUUUUUUAAAUUUUAGAGACGGGGUCUUGCUCUGUUGCCAGGCUUU
+((((.(((((((.(((((((((((..(((((.(((((..........))))).)))))..))))))))))).))))))).))))..
+>hsa-mi-323 MI0000807 Homo sapiens mi-323 stem-oop
+UUGGUACUUGGAGAGAGGUGGUCCGUGGCGCGUUCGCUUUAUUUAUGGCGCACAUUACACGGUCGACCUCUUUGCAGUAUCUAAUC
+..((((((.(.((((((((.(.(((((....((.((((........)))).))....))))).).)))))))).))))))).....
+>hsa-mi-548 MI0006361 Homo sapiens mi-548 stem-oop
+UAUUAGGUUGGUGCAAAAGUAUUUGCGGGUUUUGUCGUAGAAAGUAAUGGCAAAAACUGCAGUUACUUGUGCACCAACCAAAUGCU
+.....((((((((((.(((((.((((((.(((((((((........))))))))).)))))).))))).)))))))))).......
+>hsa-mi-942 MI0005767 Homo sapiens mi-942 stem-oop
+AUUAGGAGAGUAUCUUCUCUGUUUUGGCCAUGUGUGUACUCACAGCCCCUCACACAUGGCCGAAACAGAGAAGUUACUUUCCUAAU
+((((((((((((.(((((((((((((((((((((((..............))))))))))))))))))))))).))))))))))))
+>hsa-mi-1201 MI0006333 Homo sapiens mi-1201 stem-oop
+UUUACAGUUUGCCAUGAUGAAAUGCAUGUUAAGUCCGUGUUUCAGCUGAUCAGCCUGAUUAAACACAUGCUCUGAGCAGACUAAA
+.....(((((((((.((......((((((.......((...((((((....)).))))....)))))))))))).)))))))...
+>hsa-mi-190 MI0000486 Homo sapiens mi-190 stem-oop
+UGCAGGCCUCUGUGUGAUAUGUUUGAUAUAUUAGGUUGUUAUUUAAUCCAACUAUAUAUCAAACAUAUUCCUACAGUGUCUUGCC
+.(((((.(.(((((..(((((((((((((((..(((((..........))))))))))))))))))))..).)))).).))))).
+>hsa-mi-124-1 MI0000443 Homo sapiens mi-124-1 stem-oop
+AGGCCUCUCUCUCCGUGUUCACAGCGGACCUUGAUUUAAAUGUCCAUACAAUUAAGGCACGCGGUGAAUGCCAAGAAUGGGGCUG
+.((((((..(((..((((((((.(((..((((((((.............))))))))..))).))))))))..)))..)))))).
+>hsa-mi-541 MI0005539 Homo sapiens mi-541 stem-oop
+ACGUCAGGGAAAGGAUUCUGCUGUCGGUCCCACUCCAAAGUUCACAGAAUGGGUGGUGGGCACAGAAUCUGGACUCUGCUUGUG
+(((.(((((...((((((((.((((.(..((((((....((((...))))))))))).))))))))))))...)))))..))).
+>hsa-mi-25 MI0000082 Homo sapiens mi-25 stem-oop
+GGCCAGUGUUGAGAGGCGGAGACUUGGGCAAUUGCUGGACGCUGCCCUGGGCAUUGCACUUGUCUCGGUCUGACAGUGCCGGCC
+((((.(..(((..((((.(((((..(.(((((.(((((.......))..)))))))).)..))))).))))..)))..).))))
+>hsa-mi-196b MI0001150 Homo sapiens mi-196b stem-oop
+ACUGGUCGGUGAUUUAGGUAGUUUCCUGUUGUUGGGAUCCACCUUUCUCUCGACAGCACGACACUGCCUUCAUUACUUCAGUUG
+(((((..((((((..(((((((.((.(((((((((((..........))))))))))).)).)))))))..)))))))))))..
+>hsa-mi-487b MI0003530 Homo sapiens mi-487b stem-oop
+UUGGUACUUGGAGAGUGGUUAUCCCUGUCCUGUUCGUUUUGCUCAUGUCGAAUCGUACAGGGUCAUCCACUUUUUCAGUAUCAA
+.(((((((..((((((((....((((((.(.(((((............))))).).))))))....))))))))..))))))).
+>hsa-mi-504 MI0003189 Homo sapiens mi-504 stem-oop
+GCUGCUGUUGGGAGACCCUGGUCUGCACUCUAUCUGUAUUCUUACUGAAGGGAGUGCAGGGCAGGGUUUCCCAUACAGAGGGC
+(((.((((((((((((((((.((((((((((.((.(((....))).))..)))))))))).)))))))))))).))))..)))
+>hsa-mi-1276 MI0006416 Homo sapiens mi-1276 stem-oop
+CCCCAGCUAGGUAAAGAGCCCUGUGGAGACACCUGGAUUCAGAGAACAUGUCUCCACUGAGCACUUGGGCCUUGAUGGCGGCU
+(((((...((((.(((.((.(.(((((((((((((....))).)....))))))))).).)).)))..))))...))).))..
+>hsa-mi-515-1 MI0003144 Homo sapiens mi-515-1 stem-oop
+UCUCAUGCAGUCAUUCUCCAAAAGAAAGCACUUUCUGUUGUCUGAAAGCAGAGUGCCUUCUUUUGGAGCGUUACUGUUUGAGA
+(((((.(((((.((.(((((((((((.((((..((((((.......)))))))))).))))))))))).)).))))).)))))
+>hsa-mi-488 MI0003123 Homo sapiens mi-488 stem-oop
+GAGAAUCAUCUCUCCCAGAUAAUGGCACUCUCAAACAAGUUUCCAAAUUGUUUGAAAGGCUAUUUCUUGGUCAGAUGACUCUC
+((((.((((((..((.(((.((((((.((.((((((((.........)))))))).))))))))))).))..)))))).))))
+>hsa-mi-1270 MI0006407 Homo sapiens mi-1270 stem-oop
+CACAGAGUUAUACUGGAGAUAUGGAAGAGCUGUGUUGGGUAUAAGUAACAGGCUUUUCUUUAUCUUCUAUGUGGCUCUUUGCA
+((.(((((((((..(((((((.(((((((((.(((((........)))))))))))))).)))))))..))))))))).))..
+>hsa-mi-19a MI0000073 Homo sapiens mi-19a stem-oop
+GCAGUCCUCUGUUAGUUUUGCAUAGUUGCACUACAAGAAGAAUGUAGUUGUGCAAAUCUAUGCAAAACUGAUGGUGGCCUGC
+((((.((.(((((((((((((((((((((((((((.......))))...))))))..))))))))))))))))).)).))))
+>hsa-mi-495 MI0003135 Homo sapiens mi-495 stem-oop
+UGGUACCUGAAAAGAAGUUGCCCAUGUUAUUUUCGCUUUAUAUGUGACGAAACAAACAUGGUGCACUUCUUUUUCGGUAUCA
+.((((((.((((((((((.(((((((((..((((((.........).)))))..))))))).)))))))))))).)))))).
+>hsa-mi-1233 MI0006323 Homo sapiens mi-1233 stem-oop
+GUGAGUGGGAGGCCAGGGCACGGCAGGGGGAGCUGCAGGGCUAUGGGAGGGGCCCCAGCGUCUGAGCCCUGUCCUCCCGCAG
+....((((((((.((((((....((((....((((..(((((........))))))))).)))).)))))).))))))))..
+>hsa-mi-105-1 MI0000111 Homo sapiens mi-105-1 stem-oop
+UGUGCAUCGUGGUCAAAUGCUCAGACUCCUGUGGUGGCUGCUCAUGCACCACGGAUGUUUGAGCAUGUGCUACGGUGUCUA
+...(((((((((.((.((((((((((..((((((((.(.......)))))))))..)))))))))).)))))))))))...
+>hsa-mi-760 MI0005567 Homo sapiens mi-760 stem-oop
+GGCGCGUCGCCCCCCUCAGUCCACCAGAGCCCGGAUACCUCAGAAAUUCGGCUCUGGGUCUGUGGGGAGCGAAAUGCAAC
+.(((..((((.((((.(((....((((((((.((((.........))))))))))))..))).)))).))))..)))...
+>hsa-mi-147b MI0005544 Homo sapiens mi-147b stem-oop
+UAUAAAUCUAGUGGAAACAUUUCUGCACAAACUAGAUUCUGGACACCAGUGUGCGGAAAUGCUUCUGCUACAUUUUUAGG
+((.((((.(((..(((.((((((((((((.........((((...)))))))))))))))).)))..))).)))).))..
+>hsa-mi-320b-1 MI0003776 Homo sapiens mi-320b-1 stem-oop
+AAUUAAUCCCUCUCUUUCUAGUUCUUCCUAGAGUGAGGAAAAGCUGGGUUGAGAGGGCAAACAAAUUAACUAAUUAAUU
+.......(((((((..(((((((.(((((......))))).)))))))..)))))))......................
+>hsa-mi-889 MI0005540 Homo sapiens mi-889 stem-oop
+GUGCUUAAAGAAUGGCUGUCCGUAGUAUGGUCUCUAUAUUUAUGAUGAUUAAUAUCGGACAACCAUUGUUUUAGUAUCC
+(((((.(((.(((((.((((((.....(((((((.........)).)))))....)))))).))))).))).)))))..
+>hsa-mi-101-2 MI0000739 Homo sapiens mi-101-2 stem-oop
+ACUGUCCUUUUUCGGUUAUCAUGGUACCGAUGCUGUAUAUCUGAAAGGUACAGUACUGUGAUAACUGAAGAAUGGUGGU
+((..((.((((((((((((((((((((.(.((((............))))).)))))))))))))))))))).))..))
+>hsa-mi-563 MI0003569 Homo sapiens mi-563 stem-oop
+AGCAAAGAAGUGUGUUGCCCUCUAGGAAAUGUGUGUUGCUCUGAUGUAAUUAGGUUGACAUACGUUUCCCUGGUAGCCA
+..........((.((((((.....((((((((((((((..(((((...)))))..))))))))))))))..))))))))
+>hsa-mi-103-2 MI0000108 Homo sapiens mi-103-2 stem-oop
+UUGUGCUUUCAGCUUCUUUACAGUGCUGCCUUGUAGCAUUCAGGUCAAGCAGCAUUGUACAGGGCUAUGAAAGAACCA
+..((.(((((((((.((.(((((((((((((((.......))))....))))))))))).)))))..)))))).))..
+>hsa-mi-450b MI0005531 Homo sapiens mi-450b stem-oop
+GCAGAAUUAUUUUUGCAAUAUGUUCCUGAAUAUGUAAUAUAAGUGUAUUGGGAUCAUUUUGCAUCCAUAGUUUUGUAU
+((((((((((...(((((.(((.((((.((((..(.......)..)))))))).))).)))))...))))))))))..
+>hsa-mi-1267 MI0006404 Homo sapiens mi-1267 stem-oop
+CUCCCAAAUCUCCUGUUGAAGUGUAAUCCCCACCUCCAGCAUUGGGGAUUACAUUUCAACAUGAGAUUUGGAUGAGGA
+((((((((((((.(((((((((((((((((((..........))))))))))))))))))).)))))))))..)))..
+>hsa-mi-933 MI0005755 Homo sapiens mi-933 stem-oop
+ACUUGGGUCAGUUCAGAGGUCCUCGGGGCGCGCGUCGAGUCAGCCGUGUGCGCAGGGAGACCUCUCCCACCCACAGU
+((((((((......((((((((((.(.(((((((.(......).))))))).).))).)))))))...))))).)))
+>hsa-mi-873 MI0005564 Homo sapiens mi-873 stem-oop
+GUGUGCAUUUGCAGGAACUUGUGAGUCUCCUAUUGAAAAUGAACAGGAGACUGAUGAGUUCCCGGGAACACCCACAA
+(((.(..(((.(.((((((..(.((((((((.((.......)).)))))))).)..)))))).).)))..).)))..
+>hsa-mi-892a MI0005528 Homo sapiens mi-892a stem-oop
+GCAGUGCCUUACUCAGAAAGGUGCCAGUCACUUACACUACAUGUCACUGUGUCCUUUCUGCGUAGAGUAAGGCUC
+.....((((((((((((((((.((((((.((...........)).)))).))))))))).....)))))))))..
+>hsa-mi-370 MI0000778 Homo sapiens mi-370 stem-oop
+AGACAGAGAAGCCAGGUCACGUCUCUGCAGUUACACAGCUCACGAGUGCCUGCUGGGGUGGAACCUGGUCUGUCU
+((((((....(((((((..(..(((.((((.(((.(.......).))).)))).)))..)..)))))))))))))
+>hsa-mi-1226 MI0006313 Homo sapiens mi-1226 stem-oop
+GUGAGGGCAUGCAGGCCUGGAUGGGGCAGCUGGGAUGGUCCAAAAGGGUGGCCUCACCAGCCCUGUGUUCCCUAG
+...((((.(((((((.((((.((((((.(((.((.....)).....))).)))))))))).))))))).))))..
+>hsa-mi-631 MI0003645 Homo sapiens mi-631 stem-oop
+GUGGGGAGCCUGGUUAGACCUGGCCCAGACCUCAGCUACACAAGCUGAUGGACUGAGUCAGGGGCCACACUCUCC
+..((((((..((((....((((((.(((.((((((((.....)))))).)).))).)))))).))))..))))))
+>hsa-et-7a-3 MI0000062 Homo sapiens et-7a-3 stem-oop
+GGGUGAGGUAGUAGGUUGUAUAGUUUGGGGCUCUGCCCUGCUAUGGGAUAACUAUACAAUCUACUGUCUUUCCU
+(((.(((..((((((((((((((((((((((...)))))).........))))))))))))))))..))).)))
+>hsa-mi-23a MI0000079 Homo sapiens mi-23a stem-oop
+GGCCGGCUGGGGUUCCUGGGGAUGGGAUUUGCUUCCUGUCACAAAUCACAUUGCCAGGGAUUUCCAACCGACC
+((.(((.((((((((((((.((((.((((((..........)))))).)))).))))))).))))).))).))
+>hsa-mi-485 MI0002469 Homo sapiens mi-485 stem-oop
+ACUUGGAGAGAGGCUGGCCGUGAUGAAUUCGAUUCAUCAAAGCGAGUCAUACACGGCUCUCCUCUCUUUUAGU
+(((..((((((((..(((((((((((.((((...........)))))))).)))))))..))))))))..)))
+>hsa-et-7a-2 MI0000061 Homo sapiens et-7a-2 stem-oop
+AGGUUGAGGUAGUAGGUUGUAUAGUUUAGAAUUACAUCAAGGGAGAUAACUGUACAGCCUCCUAGCUUUCCU
+(((..(((.(((.(((((((((((((.....(..(.....)..)...))))))))))))).))).))).)))
+>hsa-mi-503 MI0003188 Homo sapiens mi-503 stem-oop
+UGCCCUAGCAGCGGGAACAGUUCUGCAGUGAGCGAUCGGUGCUCUGGGGUAUUGUUUCCGCUGCCAGGGUA
+((((((.((((((((((((((.((.((..(((((.....))))))).)).)))))))))))))).))))))
+>hsa-mi-30a MI0000088 Homo sapiens mi-30a stem-oop
+GCGACUGUAAACAUCCUCGACUGGAAGCUGUGAAGCCACAGAUGGGCUUUCAGUCGGAUGUUUGCAGCUGC
+(((.((((((((((((..((((((((((((((....))).....))))))))))))))))))))))).)))
+>hsa-mi-1-1 MI0000651 Homo sapiens mi-1-1 stem-oop
+UGGGAAACAUACUUCUUUAUAUGCCCAUAUGGACCUGCUAAGCUAUGGAAUGUAAAGAAGUAUGUAUCUCA
+.((((.((((((((((((((((..((((((((.....)))...))))).)))))))))))))))).)))).
+>hsa-mi-30 MI0000255 Homo sapiens mi-30 stem-oop
+GUUGUUGUAAACAUCCCCGACUGGAAGCUGUAAGACACAGCUAAGCUUUCAGUCAGAUGUUUGCUGCUAC
+...((.(((((((((...(((((((((((...((......)).))))))))))).))))))))).))...
+>hsa-mi-376a-1 MI0000784 Homo sapiens mi-376a-1 stem-oop
+UAAAAGGUAGAUUCUCCUUCUAUGAGUACAUUAUUUAUGAUUAAUCAUAGAGGAAAAUCCACGUUUUC
+.((((.((.((((.((((.((((((...(((.....))).....)))))))))).)))).)).)))).
+>hsa-mi-372 MI0000780 Homo sapiens mi-372 stem-oop
+GUGGGCCUCAAAUGUGGAGCACUAUUCUGAUGUCCAAGUGGAAAGUGCUGCGACAUUUGAGCGUCAC
+...((((((((((((.(((((((.((((...........)))))))))).).))))))))).)))..
+>hsa-mi-297 MI0005775 Homo sapiens mi-297 stem-oop
+UGUAUGUAUGUGUGCAUGUGCAUGUAUGUGUAUAUACAUAUAUAUGUAUUAUGUACUCAUAUAUCA
+.(.(((((((.((((((((((((((((((((....))))))))))))).))))))).)))))))).
+>hsa-mi-1252 MI0006434 Homo sapiens mi-1252 stem-oop
+AGAAAGAAGGAAAUUGAAUUCAUUUAGAAAAGAGAAUUCCAAAUGAGCUUAAUUUCCUUUUUUCU
+(((((((((((((((((.(((((((.(((.......))).))))))).)))))))))))))))))
+>hsa-mi-362 MI0000762 Homo sapiens mi-362 stem-oop
+CUUGAAUCCUUGGAACCUAGGUGUGAGUGCUAUUUCAGUGCAACACACCUAUUCAAGGAUUCAAA
+.(((((((((((((...((((((((.(..((.....))..)..))))))))))))))))))))).
+>hsa-mi-1206 MI0006339 Homo sapiens mi-1206 stem-oop
+CAGUGUUCAUGUAGAUGUUUAAGCUCUUGCAGUAGGUUUUUGCAAGCUAGUGAACGCUG
+((((((((((.(((.(((..((((.((......))))))..)))..)))))))))))))
+>hsa-mi-1281 MI0006428 Homo sapiens mi-1281 stem-oop
+AGGGGGCACCGGGAGGAGGUGAGUGUCUCUUGUCGCCUCCUCCUCUCCCCCCUU
+((((((....((((((((((((..........))))))))))))...)))))).
+>hsa-mi-1825 MI0008193 Homo sapiens mi-1825 stem-oop
+AGAGACUGGGGUGCUGGGCUCCCCUAGACUAGGACUCCAGUGCCCUCCUCUCC
+.((((..((((..((((..(((.........)))..))))..))))..)))).
+>hsa-mi-1268 MI0006405 Homo sapiens mi-1268 stem-oop
+UAGCCGGGCGUGGUGGUGGGGGCCUGUGGUCCCAGCUACUUUGGAGGCUGAG
+(((((...((.((((((.((((((...)))))).)))))).))..)))))..
